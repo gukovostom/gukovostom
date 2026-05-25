@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ГАУ РО «Стоматологическая поликлиника» в г. Гуково</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1a4a7a;
+    --blue-light: #2563a8;
+    --blue-pale: #e8f0fb;
+    --accent: #e63946;
+    --white: #ffffff;
+    --gray: #f4f6fb;
+    --text: #1c2b3a;
+    --muted: #6b7a8d;
+    --border: #d0daea;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--blue);
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  .topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+
+  /* HEADER */
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--blue);
+    padding: 18px 20px;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-icon svg { width: 36px; height: 36px; fill: white; }
+  .logo-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1.3;
+  }
+  .logo-text p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--blue-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+  nav a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 13px 14px;
+    display: block;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+  }
+  nav a:hover, nav a.active {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+
+  /* BURGER */
+  .burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 13px 20px;
+    color: white;
+    font-size: 22px;
+  }
+  .nav-links { display: flex; flex-wrap: wrap; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .hero p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 6px;
+font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-white {
+    background: white;
+    color: var(--blue);
+  }
+  .btn-white:hover { background: var(--blue-pale); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.6);
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+  /* WORK HOURS BANNER */
+  .hours-banner {
+    background: var(--blue-pale);
+    border-left: 4px solid var(--blue);
+    padding: 16px 24px;
+    margin: 0;
+  }
+  .hours-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+  }
+  .hours-item { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .hours-item strong { color: var(--blue); }
+
+  /* MAIN */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* CARDS GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .card {
+    background: var(--gray);
+    border-radius: 10px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border);
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,74,122,0.12); }
+  .card-icon {
+    width: 52px; height: 52px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .card-icon svg { width: 26px; height: 26px; fill: white; }
+  .card h3 { font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 8px; }
+  .card p { font-size: 13px; color: var(--muted); }
+
+  /* SECTION */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--blue);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--blue-pale);
+  }
+
+  /* INFO BLOCK */
+  .info-block {
+    background: var(--gray);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+  }
+  .info-block p { margin-bottom: 10px; font-size: 15px; }
+  .info-block p:last-child { margin-bottom: 0; }
+
+  /* CONTACTS */
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    background: var(--gray);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: var(--blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 20px; height: 20px; fill: white; }
+  .contact-item h4 { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .contact-item p, .contact-item a { font-size: 14px; font-weight: 600; color: var(--text); text-decoration: none; }
+  .contact-item a:hover { color: var(--blue-light); }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  th {
+    background: var(--blue);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 11px 16px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: var(--gray); }
+  tr:hover td { background: var(--blue-pale); }
+
+  /* NOTICE */
+  .notice {
+    background: #fff8e1;
+    border-left: 4px solid #f59e0b;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .notice strong { color: #92400e; }
+
+  /* IMPORTANT LINKS */
+.links-list { list-style: none; margin-bottom: 24px; }
+  .links-list li {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .links-list li:last-child { border-bottom: none; }
+  .links-list a {
+    color: var(--blue-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .links-list a:hover { text-decoration: underline; }
+  .link-dot {
+    width: 8px; height: 8px;
+    background: var(--blue-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* NEWS */
+  .news-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-date { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .news-item h4 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .news-item p { font-size: 13px; color: var(--muted); }
+
+  /* FOOTER */
+  footer {
+    background: var(--blue);
+    color: rgba(255,255,255,0.8);
+    padding: 40px 20px 20px;
+    margin-top: 40px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .footer-col h4 {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .footer-col p, .footer-col a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .footer-col a:hover { color: white; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+  }
+
+  /* PAGE SECTIONS (hidden by default) */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .burger { display: block; }
+    .nav-links { display: none; flex-direction: column; width: 100%; }
+    .nav-links.open { display: flex; }
+    nav a { padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .hero h2 { font-size: 22px; }
+    .hours-inner { gap: 12px; }
+    .logo-text h1 { font-size: 14px; }
+  }
+
+  /* SCHEDULE TABLE */
+  .schedule-table th:first-child { width: 180px; }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* VIP ROW */
+  .vip-notice {
+    background: linear-gradient(135deg, #fff8e1, #fef3c7);
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>📍 347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51</span>
+    <span>
+      <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a>
+      &nbsp;|&nbsp;
+      <a href="https://vk.com/sp_gukovo" target="_blank">ВКонтакте</a>
+    </span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 2.8 1.3 3.8C6.5 12 6 13.5 6 15c0 3.3 2.2 6 4 7h4c1.8-1 4-3.7 4-7 0-1.5-.5-3-1.3-4.2C17.5 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5zm0 2c2.3 0 4 1.7 4 3 0 1-.4 2-1.1 2.7l-.9.8.9.8C15.6 12.1 16 13.1 16 14c0 2.5-1.7 4.8-3 6h-2c-1.3-1.2-3-3.5-3-6 0-.9.4-1.9 1.1-2.7l.9-.8-.9-.8C8.4 9 8 8 8 7c0-1.3 1.7-3 4-3z"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <h1>Государственное автономное учреждение Ростовской области<br>«Стоматологическая поликлиника» в г. Гуково</h1>
+<p>ГАУ РО «СП» в г. Гуково &nbsp;•&nbsp; ОГРН: официальная медицинская организация</p>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <button class="burger" onclick="toggleMenu()" aria-label="Меню">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#" class="active" onclick="showPage('home',this)">Главная</a>
+      <a href="#" onclick="showPage('about',this)">О нас</a>
+      <a href="#" onclick="showPage('services',this)">Услуги</a>
+      <a href="#" onclick="showPage('schedule',this)">Расписание</a>
+      <a href="#" onclick="showPage('tariffs',this)">Тарифы</a>
+      <a href="#" onclick="showPage('patients',this)">Пациентам</a>
+      <a href="#" onclick="showPage('accessible',this)">Доступная среда</a>
+      <a href="#" onclick="showPage('anticorr',this)">Противодействие коррупции</a>
+      <a href="#" onclick="showPage('contacts',this)">Контакты</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HOURS BANNER -->
+<div class="hours-banner">
+  <div class="hours-inner">
+    <div class="hours-item">🕐 <span><strong>Пн–Пт:</strong> 7:30 – 20:00</span></div>
+    <div class="hours-item">🕐 <span><strong>Сб–Вс:</strong> 7:30 – 13:30 (дежурные врачи)</span></div>
+    <div class="hours-item">📞 <span>Регистратура: <strong><a href="tel:+78636156099">(86361) 5-60-99</a></strong></span></div>
+    <div class="hours-item">📞 <span>Приёмная: <strong><a href="tel:+78636157020">(86361) 5-70-20</a></strong></span></div>
+  </div>
+</div>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <h2>Стоматологическая помощь жителям г. Гуково</h2>
+      <p>Единственная стоматологическая поликлиника города с 1974 года.<br>Лечение по ОМС, платные услуги, льготное протезирование.</p>
+      <div class="hero-btns">
+        <a href="https://www.gosuslugi.ru/" target="_blank" class="btn btn-white">Записаться через Госуслуги</a>
+        <a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank" class="btn btn-outline">Здоровье Дона</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- QUICK CARDS -->
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        </div>
+        <h3>Запись на приём</h3>
+        <p>Через Госуслуги, портал Здоровье Дона или по телефону</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
+        </div>
+        <h3>Часто задаваемые вопросы</h3>
+        <p>Ответы на популярные вопросы пациентов</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"/></svg>
+        </div>
+        <h3>Льготное протезирование</h3>
+        <p>Ветераны, участники СВО и другие льготные категории</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <h3>Обратная связь</h3>
+        <p>Email: stomatolog1.82@mail.ru<br>ВКонтакте: vk.com/sp_gukovo</p>
+      </div>
+    </div>
+
+    <!-- NOTICE -->
+    <div class="notice">
+      <strong>Важно!</strong> С 03.04.2025 лица, имеющие право на льготное зубопротезирование и проживающие на территории Красносулинского района, могут получить услугу в ГАУ РО «СП» в г. Гуkowo. (Приказ Минздрава РО от 03.04.2025 № 520)
+    </div>
+
+    <!-- VIP NOTICE -->
+<div class="vip-notice">
+      ⭐ <strong>Герои Советского Союза, Герои Российской Федерации, ветераны и инвалиды ВОВ, ветераны боевых действий</strong> — обслуживаются <strong>вне очереди</strong>.
+    </div>
+
+    <!-- WAYS TO REGISTER -->
+    <h2 class="section-title">Способы записи на приём</h2>
+    <table>
+      <thead>
+        <tr><th>Способ записи</th><th>График доступа</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Единый портал госуслуг (ЕПГУ)</td><td>Круглосуточно</td></tr>
+        <tr><td>Региональный портал госуслуг (Здоровье Дона)</td><td>Круглосуточно</td></tr>
+        <tr><td>Личное обращение в регистратуру</td><td>В часы работы поликлиники</td></tr>
+        <tr><td>Звонок в колл-центр</td><td>В часы работы поликлиники</td></tr>
+        <tr><td>По направлению врача</td><td>В часы работы поликлиники</td></tr>
+      </tbody>
+    </table>
+
+    <!-- NEWS -->
+    <h2 class="section-title">Актуальная информация</h2>
+    <div class="news-item">
+      <div class="news-date">Май 2026</div>
+      <h4>Горячая линия по профилактике клещевого энцефалита</h4>
+      <p>Телефон горячей линии: (863) 245-83-15, с 09:00 до 17:00 ежедневно, кроме выходных.</p>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026</div>
+      <h4>Чат-бот Министерства здравоохранения Ростовской области</h4>
+      <p>В мессенджере MAX начал работу верифицированный чат-бот @zdrav_rnd_bot. Запись к врачу, консультация, больничный лист.</p>
+    </div>
+    <div class="news-item">
+      <div class="news-date">С апреля 2025</div>
+      <h4>Льготное протезирование для жителей Красносулинского района</h4>
+      <p>Теперь жители Красносулинского района с правом на льготы могут обслуживаться в нашей поликлинике.</p>
+    </div>
+  </main>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="page-about" class="page">
+  <main>
+    <h2 class="section-title">Об организации</h2>
+    <div class="info-block">
+      <p>Стоматологическая поликлиника была выделена в самостоятельное учреждение в <strong>1974 году</strong> и является единственной стоматологической поликлиникой города.</p>
+      <p>В <strong>1981 году</strong> поликлиника переехала в новое здание — первый этаж пятиэтажного жилого дома по адресу: ул. Карла Маркса, 51.</p>
+      <p>ГАУ РО «СП» в г. Гуково оказывает медицинские услуги за счёт средств <strong>ОМС</strong> в объёме, предусмотренном программой государственных гарантий, а также предоставляет услуги <strong>на платной основе</strong>.</p>
+      <p>Пациенту предоставляется возможность выбора врача-стоматолога. Плановая санация осуществляется как непосредственно в день обращения, так и по предварительной записи.</p>
+      <p>При проведении плановых посещений время ожидания — <strong>не более 45 минут</strong>. Вне очереди обслуживаются больные с признаками острых заболеваний, беременные женщины, ветераны ВОВ и приравненные к ним лица.</p>
+    </div>
+
+    <h2 class="section-title">Руководство</h2>
+    <div class="info-block">
+      <p><strong>Исполняющий обязанности главного врача:</strong> Мельникова Ирина Юрьевна</p>
+    </div>
+
+    <h2 class="section-title">Полезные документы</h2>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="https://sp-gukovo.3dn.ru/struktura.pdf" target="_blank">Структура ГАУ РО «СП» в г. Гуково (PDF)</a></li>
+      <li><span class="link-dot"></span><a href="https://sp-gukovo.3dn.ru/svidetelstvo_novoe.pdf" target="_blank">Свидетельство о регистрации (PDF)</a></li>
+    </ul>
+
+    <h2 class="section-title">Вышестоящие органы</h2>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="https://minzdrav.donland.ru/" target="_blank">Министерство здравоохранения Ростовской области</a></li>
+      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Министерство здравоохранения РФ</a></li>
+<li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Независимая оценка качества медицинской помощи</a></li>
+    </ul>
+  </main>
+</div>
+
+<!-- ===== SERVICES PAGE ===== -->
+<div id="page-services" class="page">
+  <main>
+    <h2 class="section-title">Услуги поликлиники</h2>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 2.8 1.3 3.8C6.5 12 6 13.5 6 15c0 3.3 2.2 6 4 7h4c1.8-1 4-3.7 4-7 0-1.5-.5-3-1.3-4.2C17.5 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/></svg></div>
+        <h3>Терапевтическая стоматология</h3>
+        <p>Лечение кариеса, пульпита, периодонтита. Пломбирование зубов.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
+        <h3>Хирургическая стоматология</h3>
+        <p>Удаление зубов, хирургическое лечение заболеваний полости рта.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>Ортопедическая стоматология</h3>
+        <p>Протезирование зубов, коронки, мосты. Льготное протезирование.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2z"/></svg></div>
+        <h3>Детская стоматология</h3>
+        <p>Лечение молочных и постоянных зубов у детей. Профилактика.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+        <h3>Профилактика и гигиена</h3>
+        <p>Профессиональная чистка зубов, снятие зубного камня, фторирование.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg></div>
+        <h3>Обслуживание на дому</h3>
+        <p>При невозможности посещения поликлиники — по справке от участкового терапевта.</p>
+      </div>
+    </div>
+
+    <div class="notice">
+      <strong>Оплата:</strong> наличный расчёт и банковские карты. Медицинская помощь по ОМС — бесплатно в объёме программы государственных гарантий.
+    </div>
+  </main>
+</div>
+
+<!-- ===== SCHEDULE PAGE ===== -->
+<div id="page-schedule" class="page">
+  <main>
+    <h2 class="section-title">Расписание врачей</h2>
+    <div class="notice">
+      <strong>Актуальное расписание</strong> уточняйте по телефону регистратуры: <a href="tel:+78636156099"><strong>(86361) 5-60-99</strong></a> или при личном обращении.
+    </div>
+    <div class="info-block">
+      <p><strong>Режим работы поликлиники:</strong></p>
+      <p>🕐 Понедельник – Пятница: <strong>7:30 – 20:00</strong></p>
+      <p>🕐 Суббота – Воскресенье: <strong>7:30 – 13:30</strong> (приём ведут дежурные врачи)</p>
+    </div>
+
+    <h2 class="section-title">Запись на приём</h2>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="https://www.gosuslugi.ru/" target="_blank">Записаться через Единый портал Госуслуг (ЕПГУ)</a></li>
+      <li><span class="link-dot"></span><a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank">Записаться через портал «Здоровье Дона»</a></li>
+      <li><span class="link-dot"></span><a href="https://max.ru/gbu_ro_miac_bot" target="_blank">Записаться через чат-бот в мессенджере MAX (@zdrav_rnd_bot)</a></li>
+    </ul>
+  </main>
+</div>
+
+<!-- ===== TARIFFS PAGE ===== -->
+<div id="page-tariffs" class="page">
+  <main>
+    <h2 class="section-title">Тарифы на платные услуги</h2>
+<div class="notice">
+      Актуальный прейскурант уточняйте по телефону: <a href="tel:+78636157020"><strong>(86361) 5-70-20</strong></a> или в регистратуре поликлиники.
+    </div>
+    <div class="info-block">
+      <p>ГАУ РО «СП» в г. Гуково оказывает медицинские услуги:</p>
+      <p>• <strong>Бесплатно</strong> — за счёт средств ОМС в объёме программы государственных гарантий</p>
+      <p>• <strong>На платной основе</strong> — согласно утверждённому прейскуранту</p>
+      <p>• <strong>Льготное зубопротезирование</strong> — для отдельных категорий граждан</p>
+    </div>
+
+    <h2 class="section-title">Льготное зубопротезирование</h2>
+    <div class="info-block">
+      <p>Льготное зубное протезирование предоставляется:</p>
+      <p>• Ветеранам боевых действий и участникам СВО</p>
+      <p>• Героям Советского Союза, Героям РФ, Героям Социалистического Труда</p>
+      <p>• Ветеранам и инвалидам Великой Отечественной войны</p>
+      <p>• Ветеранам труда (в соответствии с областными законами)</p>
+      <p>• Труженикам тыла</p>
+      <p>• Гражданам, пострадавшим от политических репрессий</p>
+    </div>
+  </main>
+</div>
+
+<!-- ===== PATIENTS PAGE ===== -->
+<div id="page-patients" class="page">
+  <main>
+    <h2 class="section-title">Информация для пациентов</h2>
+
+    <div class="vip-notice">
+      ⭐ <strong>Герои Советского Союза, Герои РФ, ветераны и инвалиды ВОВ, ветераны боевых действий</strong> — обслуживаются <strong>вне очереди</strong>.
+    </div>
+
+    <h2 class="section-title">Права пациентов</h2>
+    <div class="info-block">
+      <p>• Выбор врача-стоматолога</p>
+      <p>• Получение медицинской помощи по ОМС бесплатно</p>
+      <p>• Медицинская помощь вне очереди при острых заболеваниях</p>
+      <p>• По экстренным показаниям — с момента обращения</p>
+      <p>• Обслуживание на дому при невозможности посещения (по справке от участкового терапевта)</p>
+    </div>
+
+    <h2 class="section-title">Электронные медицинские документы на Госуслугах</h2>
+    <div class="info-block">
+      <p>На портале Госуслуг доступны:</p>
+      <p>• Направление на госпитализацию, обследование, консультации</p>
+      <p>• Протоколы исследований и консультаций</p>
+      <p>• Результаты диспансеризации</p>
+      <p>• Выписной эпикриз</p>
+      <p>• Справки об отсутствии контактов с инфекционными больными</p>
+      <p style="margin-top:10px;"><strong>Рекомендуем использовать браузеры Яндекс или Атом</strong> для корректной работы сервисов.</p>
+    </div>
+
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <div class="info-block">
+      <p><strong>Как записаться на приём?</strong><br>
+      Через Госуслуги, портал Здоровье Дона, по телефону регистратуры (86361) 5-60-99 или лично.</p>
+      <p style="margin-top:14px;"><strong>Сколько ждать в очереди?</strong><br>
+      При плановом приёме — не более 45 минут. При острой боли — принимают вне очереди.</p>
+      <p style="margin-top:14px;"><strong>Как оплатить услуги?</strong><br>
+      Наличный расчёт или банковская карта. Услуги по ОМС — бесплатно.</p>
+    </div>
+
+    <h2 class="section-title">Нормативные документы</h2>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="https://sp-gukovo.3dn.ru/Mart2025/epgu_zapis_detej_po_napravleniju.docx">Запись детей по направлению через ЕПГУ</a></li>
+      <li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Независимая оценка качества условий оказания медицинской помощи</a></li>
+    </ul>
+  </main>
+</div>
+
+<!-- ===== ACCESSIBLE PAGE ===== -->
+<div id="page-accessible" class="page">
+  <main>
+    <h2 class="section-title">Доступная среда</h2>
+    <div class="info-block">
+      <p>ГАУ РО «СП» в г. Гуково обеспечивает доступность медицинской помощи для людей с ограниченными возможностями здоровья.</p>
+      <p>По вопросам доступной среды обращайтесь по телефону приёмной: <a href="tel:+78636157020"><strong>(86361) 5-70-20</strong></a></p>
+    </div>
+    <div class="notice">
+Подробную информацию о доступной среде уточняйте в администрации поликлиники.
+    </div>
+  </main>
+</div>
+
+<!-- ===== ANTICORRUPTION PAGE ===== -->
+<div id="page-anticorr" class="page">
+  <main>
+    <h2 class="section-title">Противодействие коррупции</h2>
+    <div class="info-block">
+      <p>ГАУ РО «СП» в г. Гуково проводит политику нетерпимости к проявлениям коррупции.</p>
+      <p>По фактам коррупции вы можете обратиться:</p>
+      <p>• К руководству поликлиники: <a href="tel:+78636157020">(86361) 5-70-20</a></p>
+      <p>• По электронной почте: <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a></p>
+    </div>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="https://www.anticorruption.life/" target="_blank">Международный конкурс «Вместе против коррупции!»</a></li>
+      <li><span class="link-dot"></span><a href="https://pos.gosuslugi.ru/" target="_blank">Госуслуги — «Решаем вместе»</a></li>
+    </ul>
+  </main>
+</div>
+
+<!-- ===== CONTACTS PAGE ===== -->
+<div id="page-contacts" class="page">
+  <main>
+    <h2 class="section-title">Контактные данные</h2>
+
+    <div class="contacts-grid">
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div>
+          <h4>Адрес</h4>
+          <p>347881, Ростовская область,<br>г. Гуково, ул. Карла Маркса, 51</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div>
+          <h4>Приёмная</h4>
+          <a href="tel:+78636157020">(86361) 5-70-20</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div>
+          <h4>Регистратура</h4>
+          <a href="tel:+78636156099">(86361) 5-60-99</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div>
+          <h4>Бухгалтерия</h4>
+          <a href="tel:+78636156133">(86361) 5-61-33</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div>
+          <h4>Ортопедическое отделение</h4>
+          <a href="tel:+78636156783">(86361) 5-67-83</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Режим работы</h2>
+    <div class="info-block">
+<p>🕐 <strong>Понедельник – Пятница:</strong> 7:30 – 20:00</p>
+      <p>🕐 <strong>Суббота – Воскресенье:</strong> 7:30 – 13:30 (приём ведут дежурные врачи)</p>
+    </div>
+
+    <h2 class="section-title">Мы в социальных сетях</h2>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="https://vk.com/sp_gukovo" target="_blank">ВКонтакте: vk.com/sp_gukovo</a></li>
+    </ul>
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>ГАУ РО «СП» в г. Гуково</h4>
+        <p>Единственная стоматологическая поликлиника города с 1974 года</p>
+        <p>347881, Ростовская область,<br>г. Гуково, ул. Карла Маркса, 51</p>
+      </div>
+      <div class="footer-col">
+        <h4>Телефоны</h4>
+        <a href="tel:+78636157020">Приёмная: (86361) 5-70-20</a>
+        <a href="tel:+78636156099">Регистратура: (86361) 5-60-99</a>
+        <a href="tel:+78636156133">Бухгалтерия: (86361) 5-61-33</a>
+        <a href="tel:+78636156783">Ортопедия: (86361) 5-67-83</a>
+      </div>
+      <div class="footer-col">
+        <h4>Запись на приём</h4>
+        <a href="https://www.gosuslugi.ru/" target="_blank">Госуслуги</a>
+        <a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank">Здоровье Дона</a>
+        <a href="https://vk.com/sp_gukovo" target="_blank">ВКонтакте</a>
+        <a href="mailto:stomatolog1.82@mail.ru">Email</a>
+      </div>
+      <div class="footer-col">
+        <h4>Полезные ссылки</h4>
+        <a href="https://www.gosuslugi.ru/" target="_blank">Госуслуги</a>
+        <a href="https://pos.gosuslugi.ru/" target="_blank">Решаем вместе</a>
+        <a href="https://nok.minzdrav.gov.ru/" target="_blank">Оценка качества</a>
+        <a href="https://t.me/cyberpolice_rus" target="_blank">Киберполиция России</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 ГАУ РО «Стоматологическая поликлиника» в г. Гуково &nbsp;|&nbsp; gukovostom.ru
+    </div>
+  </div>
+</footer>
+
+<script>
+function showPage(name, el) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // Show selected
+  document.getElementById('page-' + name).classList.add('active');
+  // Update nav
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  if (el) el.classList.add('active');
+  // Close mobile menu
+  document.getElementById('navLinks').classList.remove('open');
+  // Scroll to top
+  window.scrollTo(0, 0);
+  return false;
+}
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
