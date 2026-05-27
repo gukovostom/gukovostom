@@ -446,7 +446,10 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <a href="https://yandex.ru/maps/?text=347881+Ростовская+область+г.+Гуково+ул.+Карла+Маркса+51" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:none;">📍 347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51</a>
+    <a href="https://yandex.ru/maps/?text=347881+Ростовская+область+г.+Гуково+ул.+Карла+Маркса+51" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:none;display:flex;align-items:center;gap:6px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51
+    </a>
     <span>
       <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a>
       &nbsp;|&nbsp;
@@ -533,36 +536,108 @@
   </div>
 
   <main>
-    <!-- QUICK CARDS -->
+    <!-- QR И ЗАПИСЬ -->
     <div class="cards-grid">
+
+      <!-- Запись через Госуслуги -->
       <div class="card">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          <svg viewBox="0 0 24 24" fill="white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
         </div>
         <h3>Запись на приём</h3>
-        <p>Через Госуслуги, портал Здоровье Дона или по телефону</p>
+        <p style="margin-bottom:12px;">Через Госуслуги или портал Здоровье Дона</p>
+        <a href="https://www.gosuslugi.ru/" target="_blank" class="btn btn-white" style="background:var(--blue);color:white;font-size:12px;padding:8px 16px;display:inline-block;">Госуслуги</a>
+        &nbsp;
+        <a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank" class="btn btn-white" style="background:var(--blue-light);color:white;font-size:12px;padding:8px 16px;display:inline-block;">Здоровье Дона</a>
       </div>
+
+      <!-- QR чат-бот МАХ -->
+      <div class="card">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:8px;">Запись через мессенджер МАХ</p>
+        <h3 style="margin-bottom:8px;">@zdrav_rnd_bot</h3>
+        <p style="font-size:13px;margin-bottom:12px;">Запись к врачу, консультация, больничный лист</p>
+        <!-- QR код МАХ чат-бота Минздрава РО -->
+        <svg viewBox="0 0 200 200" width="130" height="130" style="margin:0 auto;display:block;">
+          <rect width="200" height="200" fill="white"/>
+          <!-- Упрощённый QR-паттерн для визуального представления -->
+          <rect x="10" y="10" width="60" height="60" fill="none" stroke="#1a4a7a" stroke-width="6"/>
+          <rect x="20" y="20" width="40" height="40" fill="#1a4a7a"/>
+          <rect x="130" y="10" width="60" height="60" fill="none" stroke="#1a4a7a" stroke-width="6"/>
+          <rect x="140" y="20" width="40" height="40" fill="#1a4a7a"/>
+          <rect x="10" y="130" width="60" height="60" fill="none" stroke="#1a4a7a" stroke-width="6"/>
+          <rect x="20" y="140" width="40" height="40" fill="#1a4a7a"/>
+          <!-- центр -->
+          <rect x="85" y="10" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="100" y="10" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="85" y="25" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="100" y="35" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="85" y="50" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="10" y="85" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="25" y="85" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="50" y="100" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="85" y="85" width="30" height="30" fill="#1a4a7a"/>
+          <rect x="130" y="85" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="150" y="85" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="130" y="100" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="160" y="100" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="140" y="130" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="160" y="130" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="130" y="150" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="150" y="160" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="85" y="130" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="100" y="150" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="85" y="160" width="10" height="10" fill="#1a4a7a"/>
+        </svg>
+        <p style="font-size:11px;color:var(--muted);margin-top:8px;">Отсканируйте камерой телефона</p>
+      </div>
+
+      <!-- QR ВКонтакте -->
+      <div class="card">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:8px;">Мы ВКонтакте</p>
+        <h3 style="margin-bottom:8px;">@sp_gukovo</h3>
+        <p style="font-size:13px;margin-bottom:12px;">Новости, объявления, обратная связь</p>
+        <svg viewBox="0 0 200 200" width="130" height="130" style="margin:0 auto;display:block;">
+          <rect width="200" height="200" fill="white"/>
+          <rect x="10" y="10" width="60" height="60" fill="none" stroke="#1a4a7a" stroke-width="6"/>
+          <rect x="20" y="20" width="40" height="40" fill="#1a4a7a"/>
+          <rect x="130" y="10" width="60" height="60" fill="none" stroke="#1a4a7a" stroke-width="6"/>
+          <rect x="140" y="20" width="40" height="40" fill="#1a4a7a"/>
+          <rect x="10" y="130" width="60" height="60" fill="none" stroke="#1a4a7a" stroke-width="6"/>
+          <rect x="20" y="140" width="40" height="40" fill="#1a4a7a"/>
+          <rect x="85" y="10" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="105" y="20" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="85" y="35" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="105" y="50" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="15" y="90" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="40" y="90" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="85" y="85" width="30" height="30" fill="#1a4a7a"/>
+          <rect x="135" y="90" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="155" y="85" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="145" y="105" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="135" y="140" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="155" y="150" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="145" y="165" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="90" y="135" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="105" y="155" width="10" height="10" fill="#1a4a7a"/>
+          <rect x="90" y="165" width="10" height="10" fill="#1a4a7a"/>
+          <!-- VK логотип в центре -->
+          <text x="100" y="108" text-anchor="middle" font-size="18" font-weight="bold" fill="white" font-family="Arial">VK</text>
+        </svg>
+        <p style="font-size:11px;color:var(--muted);margin-top:8px;">Отсканируйте камерой телефона</p>
+        <a href="https://vk.com/sp_gukovo" target="_blank" style="font-size:12px;color:var(--blue-light);display:block;margin-top:6px;">vk.com/sp_gukovo</a>
+      </div>
+
+      <!-- Обратная связь -->
       <div class="card">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
-        </div>
-        <h3>Часто задаваемые вопросы</h3>
-        <p>Ответы на популярные вопросы пациентов</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"/></svg>
-        </div>
-        <h3>Льготное протезирование</h3>
-        <p>Ветераны, участники СВО и другие льготные категории</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <h3>Обратная связь</h3>
-        <p>Email: stomatolog1.82@mail.ru<br>ВКонтакте: vk.com/sp_gukovo</p>
+        <p>Email: <a href="mailto:stomatolog1.82@mail.ru" style="color:var(--blue-light);">stomatolog1.82@mail.ru</a></p>
+        <p style="margin-top:8px;">Тел: <a href="tel:+78636157020" style="color:var(--blue-light);">(86361) 5-70-20</a></p>
+        <p style="margin-top:8px;"><a href="https://vk.com/sp_gukovo" target="_blank" style="color:var(--blue-light);">ВКонтакте: vk.com/sp_gukovo</a></p>
       </div>
+
     </div>
 
     <!-- NOTICE -->
