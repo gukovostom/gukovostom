@@ -446,7 +446,7 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <span>📍 347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51</span>
+    <a href="https://yandex.ru/maps/?text=347881+Ростовская+область+г.+Гуково+ул.+Карла+Маркса+51" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:none;">📍 347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51</a>
     <span>
       <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a>
       &nbsp;|&nbsp;
@@ -458,11 +458,15 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <div class="logo-icon">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 2.8 1.3 3.8C6.5 12 6 13.5 6 15c0 3.3 2.2 6 4 7h4c1.8-1 4-3.7 4-7 0-1.5-.5-3-1.3-4.2C17.5 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5zm0 2c2.3 0 4 1.7 4 3 0 1-.4 2-1.1 2.7l-.9.8.9.8C15.6 12.1 16 13.1 16 14c0 2.5-1.7 4.8-3 6h-2c-1.3-1.2-3-3.5-3-6 0-.9.4-1.9 1.1-2.7l.9-.8-.9-.8C8.4 9 8 8 8 7c0-1.3 1.7-3 4-3z"/>
-      </svg>
-    </div>
+    <a href="#" onclick="showPage('home', document.querySelector('nav a'))" style="text-decoration:none;">
+      <div class="logo-icon">
+        <!-- Медицинский крест -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="9" y="2" width="6" height="20" rx="1" fill="white"/>
+          <rect x="2" y="9" width="20" height="6" rx="1" fill="white"/>
+        </svg>
+      </div>
+    </a>
     <div class="logo-text">
       <h1>Государственное автономное учреждение Ростовской области<br>«Стоматологическая поликлиника» в г. Гуково</h1>
       <p>ГАУ РО «СП» в г. Гуково &nbsp;•&nbsp; ОГРН: официальная медицинская организация</p>
@@ -494,10 +498,22 @@
 <!-- HOURS BANNER -->
 <div class="hours-banner">
   <div class="hours-inner">
-    <div class="hours-item">🕐 <span><strong>Пн–Пт:</strong> 7:30 – 20:00</span></div>
-    <div class="hours-item">🕐 <span><strong>Сб–Вс:</strong> 7:30 – 13:30 (дежурные врачи)</span></div>
-    <div class="hours-item">📞 <span>Регистратура: <strong><a href="tel:+78636156099">(86361) 5-60-99</a></strong></span></div>
-    <div class="hours-item">📞 <span>Приёмная: <strong><a href="tel:+78636157020">(86361) 5-70-20</a></strong></span></div>
+    <div class="hours-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a4a7a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span><strong>Пн–Пт:</strong> 7:30 – 20:00</span>
+    </div>
+    <div class="hours-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a4a7a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span><strong>Сб–Вс:</strong> 7:30 – 13:30 (дежурные врачи)</span>
+    </div>
+    <div class="hours-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a4a7a" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span>Регистратура: <strong><a href="tel:+78636156099">(86361) 5-60-99</a></strong></span>
+    </div>
+    <div class="hours-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a4a7a" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span>Приёмная: <strong><a href="tel:+78636157020">(86361) 5-70-20</a></strong></span>
+    </div>
   </div>
 </div>
 
@@ -1183,53 +1199,66 @@
     <h2 class="section-title">Противодействие коррупции</h2>
 
     <div class="info-block">
-      <p>ГАУ РО «СП» в г. Гуково проводит политику нетерпимости к проявлениям коррупции.</p>
-      <p><strong>Ответственный за профилактику:</strong> Бондарева Наталья Михайловна, главный бухгалтер</p>
+      <p>ГАУ РО «СП» в г. Гуково проводит политику нетерпимости к проявлениям коррупции и принимает меры по её предупреждению.</p>
+      <p style="margin-top:10px;"><strong>Ответственный за профилактику коррупционных правонарушений:</strong><br>
+      Бондарева Наталья Михайловна, главный бухгалтер</p>
       <p>Email: <a href="mailto:buhgalterstom@rambler.ru">buhgalterstom@rambler.ru</a></p>
       <p>Время работы: понедельник–пятница, 9:00–17:00</p>
     </div>
 
-    <h3 style="color:var(--blue);font-size:16px;margin-bottom:12px;">Внутренние документы по противодействию коррупции</h3>
+    <h2 class="section-title">1. Нормативные правовые акты в сфере противодействия коррупции</h2>
     <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/prikaz_25a_kodeks.pdf" target="_blank">Приказ 25А — Кодекс этики и служебного поведения работников, правила обмена деловыми подарками</a></li>
-      <li><span class="link-dot"></span><a href="docs/polozhenie_antikor.pdf" target="_blank">Положение об антикоррупционной политике</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_27a.pdf" target="_blank">Приказ 27А — Положение о комиссии по противодействию коррупции, порядок уведомления о фактах склонения к коррупции, план мероприятий</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_46a.pdf" target="_blank">Приказ 46А — О внесении изменений в состав комиссии по противодействию коррупции</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_24a.pdf" target="_blank">Приказ 24А — Об утверждении антикоррупционного стандарта закупочной деятельности</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/document/cons_doc_LAW_82959/" target="_blank">Федеральный закон от 25.12.2008 № 273-ФЗ «О противодействии коррупции»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/document/cons_doc_LAW_121895/" target="_blank">Федеральный закон от 21.11.2011 № 323-ФЗ «Об основах охраны здоровья граждан в РФ»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Областной закон Ростовской области от 12.05.2009 № 218-ЗС «О противодействии коррупции в Ростовской области»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Постановление Правительства РО от 26.02.2013 № 92 «О представлении лицами, поступающими на должность руководителя»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Федеральный закон от 27.07.2004 № 79-ФЗ «О государственной гражданской службе Российской Федерации»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Федеральный закон от 03.12.2012 № 230-ФЗ «О контроле за соответствием расходов лиц, замещающих государственные должности»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Федеральный закон от 17.07.2009 № 172-ФЗ «Об антикоррупционной экспертизе нормативных правовых актов»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Федеральный закон от 25.07.2006 № 125-ФЗ «О ратификации Конвенции об уголовной ответственности за коррупцию»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Указ Президента РФ от 08.03.2015 № 120 «О некоторых вопросах противодействия коррупции»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Указ Президента РФ от 15.07.2015 № 364 «О мерах по совершенствованию организации деятельности в области противодействия коррупции»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Постановление Правительства РО от 30.09.2015 № 5 «О порядке осуществления комиссий по координации работы по противодействию коррупции»</a></li>
+      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Постановление Правительства РО от 06.03.2014 № 151 «О сообщении отдельными категориями лиц о получении подарка»</a></li>
     </ul>
 
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">Планы и отчёты</h3>
+    <h2 class="section-title">Внутренние документы организации</h2>
     <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/otchet_korr_2022.pdf" target="_blank">Отчёт о реализации плана мероприятий за 2022 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/otchet_korr_2023.pdf" target="_blank">Отчёт о реализации плана мероприятий за 2023 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/plan_korr_2024.pdf" target="_blank">План мероприятий по противодействию коррупции на 2024 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/otchet_korr_2024.pdf" target="_blank">Отчёт о реализации плана мероприятий за 2024 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/plan_korr_2025.pdf" target="_blank">План мероприятий по противодействию коррупции на 2025 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/otchet_korr_2025.pdf" target="_blank">Отчёт о реализации плана мероприятий за 2025 год</a></li>
+      <li><span class="link-dot"></span><a href="docs/prikaz_25a_kodeks.pdf">Приказ 25А — Кодекс этики и служебного поведения работников, правила обмена деловыми подарками ГАУ РО «СП» в г. Гуково</a></li>
+      <li><span class="link-dot"></span><a href="docs/polozhenie_antikor.pdf">Положение об антикоррупционной политике</a></li>
+      <li><span class="link-dot"></span><a href="docs/prikaz_27a.pdf">Приказ 27А — Положение о комиссии по противодействию коррупции, порядок уведомления работниками работодателя о фактах обращения в целях склонения к совершению коррупционных правонарушений, положение о выявлении и урегулировании конфликта интересов, план мероприятий по противодействию коррупции</a></li>
+      <li><span class="link-dot"></span><a href="docs/prikaz_46a.pdf">Приказ 46А — О внесении изменений в состав комиссии по противодействию коррупции</a></li>
+      <li><span class="link-dot"></span><a href="docs/prikaz_24a.pdf">Приказ 24А — Об утверждении антикоррупционного стандарта закупочной деятельности</a></li>
     </ul>
 
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">Памятки и буклеты</h3>
+    <h2 class="section-title">Планы и отчёты</h2>
     <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/pamyatka_neterm.pdf" target="_blank">Формирование нетерпимости к коррупционному поведению</a></li>
-      <li><span class="link-dot"></span><a href="docs/pamyatka_prosvesh.pdf" target="_blank">Антикоррупционное правовое просвещение</a></li>
-      <li><span class="link-dot"></span><a href="docs/poryadok_obrashcheniy.pdf" target="_blank">Порядок рассмотрения обращений граждан</a></li>
+      <li><span class="link-dot"></span><a href="docs/otchet_korr_2022.pdf">Отчёт о реализации плана мероприятий за 2022 год</a></li>
+      <li><span class="link-dot"></span><a href="docs/otchet_korr_2023.pdf">Отчёт о реализации плана мероприятий за 2023 год</a></li>
+      <li><span class="link-dot"></span><a href="docs/plan_korr_2024.pdf">План мероприятий по противодействию коррупции на 2024 год</a></li>
+      <li><span class="link-dot"></span><a href="docs/otchet_korr_2024.pdf">Отчёт о реализации плана мероприятий за 2024 год</a></li>
+      <li><span class="link-dot"></span><a href="docs/plan_korr_2025.pdf">План мероприятий по противодействию коррупции на 2025 год</a></li>
+      <li><span class="link-dot"></span><a href="docs/otchet_korr_2025.pdf">Отчёт о реализации плана мероприятий за 2025 год</a></li>
     </ul>
 
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">Нормативные правовые акты</h3>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://www.consultant.ru/document/cons_doc_LAW_82959/" target="_blank">ФЗ № 273-ФЗ «О противодействии коррупции»</a></li>
-      <li><span class="link-dot"></span><a href="https://www.consultant.ru/document/cons_doc_LAW_121895/" target="_blank">ФЗ № 323-ФЗ «Об основах охраны здоровья граждан в РФ»</a></li>
-      <li><span class="link-dot"></span><a href="https://www.consultant.ru/" target="_blank">Областной закон РО № 218-ЗС «О противодействии коррупции в Ростовской области»</a></li>
-    </ul>
-
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">Куда сообщить о коррупции</h3>
+    <h2 class="section-title">2. Обратная связь для сообщений о фактах коррупции</h2>
     <div class="info-block">
+      <p>По фактам коррупции вы можете обратиться:</p>
       <p>• Руководство поликлиники: <a href="tel:+78636157020">(86361) 5-70-20</a></p>
       <p>• Email: <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a></p>
-      <p>• Прокуратура г. Гуково: г. Гуково, ул. Мира, д. 42, тел. (86361) 53511</a></p>
+      <p>• Прокуратура г. Гуково: г. Гуково, ул. Мира, д. 42, тел. (86361) 5-35-11</p>
+      <p>• Отдел УЭБ и ПК: тел. (86361) 2-63-003</p>
       <p>• Портал: <a href="https://pos.gosuslugi.ru/" target="_blank">«Решаем вместе» на Госуслугах</a></p>
-      <p>• <a href="https://www.anticorruption.life/" target="_blank">Международный конкурс «Вместе против коррупции!»</a></p>
     </div>
+
+    <h2 class="section-title">3. Памятки и буклеты</h2>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="docs/pamyatka_neterm.pdf">Формирование нетерпимости к коррупционному поведению</a></li>
+      <li><span class="link-dot"></span><a href="docs/pamyatka_prosvesh.pdf">Антикоррупционное правовое просвещение</a></li>
+      <li><span class="link-dot"></span><a href="docs/poryadok_obrashcheniy.pdf">Порядок рассмотрения обращений граждан</a></li>
+      <li><span class="link-dot"></span><a href="https://www.anticorruption.life/" target="_blank">Международный конкурс «Вместе против коррупции!»</a></li>
+    </ul>
+
   </main>
 </div>
 
