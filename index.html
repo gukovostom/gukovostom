@@ -483,7 +483,6 @@
     <button class="burger" onclick="toggleMenu()" aria-label="Меню">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#" class="active" onclick="showPage('home',this)">Главная</a>
-      <a href="#" onclick="showPage('about',this)">О нас</a>
       <a href="#" onclick="showPage('services',this)">Услуги</a>
       <a href="#" onclick="showPage('schedule',this)">Расписание</a>
       <a href="#" onclick="showPage('doctors',this)">Врачи</a>
@@ -536,108 +535,39 @@
   </div>
 
   <main>
-    <!-- QR И ЗАПИСЬ -->
-    <div class="cards-grid">
-
-      <!-- Запись через Госуслуги -->
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
-        </div>
-        <h3>Запись на приём</h3>
-        <p style="margin-bottom:12px;">Через Госуслуги или портал Здоровье Дона</p>
-        <a href="https://www.gosuslugi.ru/" target="_blank" class="btn btn-white" style="background:var(--blue);color:white;font-size:12px;padding:8px 16px;display:inline-block;">Госуслуги</a>
-        &nbsp;
-        <a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank" class="btn btn-white" style="background:var(--blue-light);color:white;font-size:12px;padding:8px 16px;display:inline-block;">Здоровье Дона</a>
-      </div>
-
-      <!-- QR чат-бот МАХ -->
-      <div class="card">
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Запись через мессенджер МАХ</p>
-        <h3 style="margin-bottom:8px;">@zdrav_rnd_bot</h3>
-        <p style="font-size:13px;margin-bottom:10px;">Запись к врачу, консультация, больничный лист</p>
-        <img src="images/qr_max.jpg" alt="QR код чат-бота МАХ @zdrav_rnd_bot" style="width:140px;height:140px;object-fit:contain;display:block;margin:0 auto;border-radius:8px;">
-        <p style="font-size:11px;color:var(--muted);margin-top:8px;">Отсканируйте камерой телефона</p>
-      </div>
-
-      <!-- QR ВКонтакте -->
-      <div class="card">
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Мы ВКонтакте</p>
-        <h3 style="margin-bottom:8px;">@sp_gukovo</h3>
-        <p style="font-size:13px;margin-bottom:10px;">Новости, объявления, обратная связь</p>
-        <img src="images/qr_vk.jpg" alt="QR код группы ВКонтакте @sp_gukovo" style="width:140px;height:140px;object-fit:contain;display:block;margin:0 auto;border-radius:8px;">
-        <p style="font-size:11px;color:var(--muted);margin-top:8px;">Отсканируйте камерой телефона</p>
-        <a href="https://vk.com/sp_gukovo" target="_blank" style="font-size:12px;color:var(--blue-light);display:block;margin-top:6px;">vk.com/sp_gukovo</a>
-      </div>
-
-      <!-- Обратная связь -->
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </div>
-        <h3>Обратная связь</h3>
-        <p>Email: <a href="mailto:stomatolog1.82@mail.ru" style="color:var(--blue-light);">stomatolog1.82@mail.ru</a></p>
-        <p style="margin-top:8px;">Тел: <a href="tel:+78636157020" style="color:var(--blue-light);">(86361) 5-70-20</a></p>
-        <p style="margin-top:8px;"><a href="https://vk.com/sp_gukovo" target="_blank" style="color:var(--blue-light);">ВКонтакте: vk.com/sp_gukovo</a></p>
-      </div>
-
-    </div>
-
-      <!-- Запись через Госуслуги -->
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
-        </div>
-        <h3>Запись на приём</h3>
-        <p style="margin-bottom:12px;">Через Госуслуги или портал Здоровье Дона</p>
-        <a href="https://www.gosuslugi.ru/" target="_blank" class="btn btn-white" style="background:var(--blue);color:white;font-size:12px;padding:8px 16px;display:inline-block;">Госуслуги</a>
-        &nbsp;
-        <a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank" class="btn btn-white" style="background:var(--blue-light);color:white;font-size:12px;padding:8px 16px;display:inline-block;">Здоровье Дона</a>
-      </div>
-
-      <!-- QR чат-бот МАХ -->
-      <div class="card">
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Запись через мессенджер МАХ</p>
-        <h3 style="margin-bottom:8px;">@zdrav_rnd_bot</h3>
-        <p style="font-size:13px;margin-bottom:10px;">Запись к врачу, консультация, больничный лист</p>
-        <img src="images/qr_max.jpg" alt="QR код чат-бота МАХ @zdrav_rnd_bot" style="width:140px;height:140px;object-fit:contain;display:block;margin:0 auto;border-radius:8px;">
-        <p style="font-size:11px;color:var(--muted);margin-top:8px;">Отсканируйте камерой телефона</p>
-      </div>
-
-      <!-- QR ВКонтакте -->
-      <div class="card">
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Мы ВКонтакте</p>
-        <h3 style="margin-bottom:8px;">@sp_gukovo</h3>
-        <p style="font-size:13px;margin-bottom:10px;">Новости, объявления, обратная связь</p>
-        <img src="images/qr_vk.jpg" alt="QR код группы ВКонтакте @sp_gukovo" style="width:140px;height:140px;object-fit:contain;display:block;margin:0 auto;border-radius:8px;">
-        <p style="font-size:11px;color:var(--muted);margin-top:8px;">Отсканируйте камерой телефона</p>
-        <a href="https://vk.com/sp_gukovo" target="_blank" style="font-size:12px;color:var(--blue-light);display:block;margin-top:6px;">vk.com/sp_gukovo</a>
-      </div>
-
-      <!-- Обратная связь -->
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </div>
-        <h3>Обратная связь</h3>
-        <p>Email: <a href="mailto:stomatolog1.82@mail.ru" style="color:var(--blue-light);">stomatolog1.82@mail.ru</a></p>
-        <p style="margin-top:8px;">Тел: <a href="tel:+78636157020" style="color:var(--blue-light);">(86361) 5-70-20</a></p>
-        <p style="margin-top:8px;"><a href="https://vk.com/sp_gukovo" target="_blank" style="color:var(--blue-light);">ВКонтакте: vk.com/sp_gukovo</a></p>
-      </div>
-
-    </div>
 
     <!-- NOTICE -->
-    <div class="notice">
-      <strong>Важно!</strong> С 03.04.2025 лица, имеющие право на льготное зубопротезирование и проживающие на территории Красносулинского района, могут получить услугу в ГАУ РО «СП» в г. Гуkowo. (Приказ Минздрава РО от 03.04.2025 № 520)
+    <div class="notice" style="background:var(--blue-pale);border-left-color:var(--blue);">
+      <strong>Важно!</strong> С 03.04.2025 жители Красносулинского района с правом на льготное зубопротезирование могут обслуживаться в ГАУ РО «СП» в г. Гуково. (Приказ Минздрава РО от 03.04.2025 № 520)
     </div>
 
     <!-- VIP NOTICE -->
-    <div class="vip-notice">
-      ⭐ <strong>Герои Советского Союза, Герои Российской Федерации, ветераны и инвалиды ВОВ, ветераны боевых действий</strong> — обслуживаются <strong>вне очереди</strong>.
+    <div class="info-block" style="border-left:4px solid var(--blue);background:var(--blue-pale);">
+      <p>⭐ <strong>Герои Советского Союза, Герои Российской Федерации, ветераны и инвалиды ВОВ, ветераны боевых действий</strong> — обслуживаются <strong>вне очереди</strong>.</p>
     </div>
 
-    <!-- WAYS TO REGISTER -->
+    <!-- ОБ ОРГАНИЗАЦИИ -->
+    <h2 class="section-title">Об организации</h2>
+    <div class="info-block">
+      <p>Стоматологическая поликлиника была выделена в самостоятельное учреждение в <strong>1974 году</strong> и является единственной стоматологической поликлиникой города.</p>
+      <p>В <strong>1981 году</strong> поликлиника переехала в новое здание — первый этаж пятиэтажного жилого дома по адресу: ул. Карла Маркса, 51.</p>
+      <p>ГАУ РО «СП» в г. Гуково оказывает медицинские услуги за счёт средств <strong>ОМС</strong> в объёме, предусмотренном программой государственных гарантий, а также предоставляет услуги <strong>на платной основе</strong>.</p>
+      <p>Пациенту предоставляется возможность выбора врача-стоматолога. При плановых посещениях время ожидания — <strong>не более 45 минут</strong>.</p>
+    </div>
+
+    <h2 class="section-title">Руководство</h2>
+    <div class="info-block">
+      <p><strong>Исполняющий обязанности главного врача:</strong> Мельникова Ирина Юрьевна</p>
+    </div>
+
+    <h2 class="section-title">Вышестоящие органы</h2>
+    <ul class="links-list">
+      <li><span class="link-dot"></span><a href="https://minzdrav.donland.ru/" target="_blank">Министерство здравоохранения Ростовской области</a></li>
+      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Министерство здравоохранения РФ</a></li>
+      <li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Независимая оценка качества медицинской помощи</a></li>
+    </ul>
+
+    <!-- СПОСОБЫ ЗАПИСИ -->
     <h2 class="section-title">Способы записи на приём</h2>
     <table>
       <thead>
@@ -646,13 +576,29 @@
       <tbody>
         <tr><td>Единый портал госуслуг (ЕПГУ)</td><td>Круглосуточно</td></tr>
         <tr><td>Региональный портал госуслуг (Здоровье Дона)</td><td>Круглосуточно</td></tr>
+        <tr><td>Чат-бот @zdrav_rnd_bot в мессенджере МАХ</td><td>Круглосуточно</td></tr>
         <tr><td>Личное обращение в регистратуру</td><td>В часы работы поликлиники</td></tr>
         <tr><td>Звонок в колл-центр</td><td>В часы работы поликлиники</td></tr>
         <tr><td>По направлению врача</td><td>В часы работы поликлиники</td></tr>
       </tbody>
     </table>
 
-    <!-- NEWS -->
+    <!-- QR КОДЫ -->
+    <h2 class="section-title">Запись через мессенджер МАХ и ВКонтакте</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px;">
+      <div style="text-align:center;">
+        <img src="images/qr_max.jpg" alt="QR код чат-бота МАХ @zdrav_rnd_bot" style="width:160px;height:160px;object-fit:contain;border-radius:8px;border:1px solid var(--border);">
+        <p style="font-size:13px;font-weight:600;color:var(--blue);margin-top:8px;">@zdrav_rnd_bot</p>
+        <p style="font-size:12px;color:var(--muted);">Запись к врачу, консультация,<br>больничный лист</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="images/qr_vk.jpg" alt="QR код группы ВКонтакте @sp_gukovo" style="width:160px;height:160px;object-fit:contain;border-radius:8px;border:1px solid var(--border);">
+        <p style="font-size:13px;font-weight:600;color:var(--blue);margin-top:8px;">@sp_gukovo</p>
+        <p style="font-size:12px;color:var(--muted);">Новости и объявления<br>поликлиники</p>
+      </div>
+    </div>
+
+    <!-- АКТУАЛЬНАЯ ИНФОРМАЦИЯ -->
     <h2 class="section-title">Актуальная информация</h2>
     <div class="news-item">
       <div class="news-date">Май 2026</div>
@@ -669,38 +615,6 @@
       <h4>Льготное протезирование для жителей Красносулинского района</h4>
       <p>Теперь жители Красносулинского района с правом на льготы могут обслуживаться в нашей поликлинике.</p>
     </div>
-  </main>
-</div>
-
-<!-- ===== ABOUT PAGE ===== -->
-<div id="page-about" class="page">
-  <main>
-    <h2 class="section-title">Об организации</h2>
-    <div class="info-block">
-      <p>Стоматологическая поликлиника была выделена в самостоятельное учреждение в <strong>1974 году</strong> и является единственной стоматологической поликлиникой города.</p>
-      <p>В <strong>1981 году</strong> поликлиника переехала в новое здание — первый этаж пятиэтажного жилого дома по адресу: ул. Карла Маркса, 51.</p>
-      <p>ГАУ РО «СП» в г. Гуково оказывает медицинские услуги за счёт средств <strong>ОМС</strong> в объёме, предусмотренном программой государственных гарантий, а также предоставляет услуги <strong>на платной основе</strong>.</p>
-      <p>Пациенту предоставляется возможность выбора врача-стоматолога. Плановая санация осуществляется как непосредственно в день обращения, так и по предварительной записи.</p>
-      <p>При проведении плановых посещений время ожидания — <strong>не более 45 минут</strong>. Вне очереди обслуживаются больные с признаками острых заболеваний, беременные женщины, ветераны ВОВ и приравненные к ним лица.</p>
-    </div>
-
-    <h2 class="section-title">Руководство</h2>
-    <div class="info-block">
-      <p><strong>Исполняющий обязанности главного врача:</strong> Мельникова Ирина Юрьевна</p>
-    </div>
-
-    <h2 class="section-title">Полезные документы</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://sp-gukovo.3dn.ru/struktura.pdf" target="_blank">Структура ГАУ РО «СП» в г. Гуково (PDF)</a></li>
-      <li><span class="link-dot"></span><a href="https://sp-gukovo.3dn.ru/svidetelstvo_novoe.pdf" target="_blank">Свидетельство о регистрации (PDF)</a></li>
-    </ul>
-
-    <h2 class="section-title">Вышестоящие органы</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://minzdrav.donland.ru/" target="_blank">Министерство здравоохранения Ростовской области</a></li>
-      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Министерство здравоохранения РФ</a></li>
-      <li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Независимая оценка качества медицинской помощи</a></li>
-    </ul>
   </main>
 </div>
 
