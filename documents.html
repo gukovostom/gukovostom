@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Нормативные документы ГАУ РО «Стоматологическая поликлиника» в г. Гуково — лицензия, прейскуранты, приказы, противодействие коррупции">
+  <title>Документы — ГАУ РО «СП» в г. Гуково</title>
+
+  <style>
+    /* ===== ТОКЕНЫ ===== */
+    :root {
+      --blue:    #1a5fa8;
+      --blue-lt: #e8f0fb;
+      --red:     #c0392b;
+      --green:   #1a7a4a;
+      --gold:    #b8860b;
+      --gray:    #f5f6f8;
+      --border:  #d6dce8;
+      --text:    #1c1c2e;
+      --muted:   #5a6375;
+      --radius:  6px;
+      --shadow:  0 1px 4px rgba(0,0,0,.10);
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'PT Sans', 'Segoe UI', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text);
+      background: #fff;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== ШАПКА СТРАНИЦЫ ===== */
+    .page-header {
+      background: var(--blue);
+      color: #fff;
+      padding: 20px 24px 16px;
+    }
+    .page-header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .page-header p { font-size: .88rem; opacity: .85; }
+
+    /* ===== НАВИГАЦИЯ ПО РАЗДЕЛАМ ===== */
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 14px 16px;
+      background: var(--gray);
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .tab-nav a {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: .82rem;
+      font-weight: 600;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--blue);
+      white-space: nowrap;
+      transition: background .15s, color .15s;
+    }
+    .tab-nav a:hover {
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
+
+    /* ===== РАЗДЕЛ ===== */
+    .doc-section {
+      margin-top: 36px;
+      scroll-margin-top: 64px;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue);
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--blue);
+      margin-bottom: 12px;
+    }
+    .section-title .icon { font-size: 1.1rem; }
+
+    /* ===== СПИСОК ДОКУМЕНТОВ ===== */
+    .doc-list { list-style: none; }
+    .doc-list li {
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-list li:last-child { border-bottom: none; }
+
+    .doc-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 4px;
+      color: var(--text);
+      font-size: .9rem;
+      transition: background .12s;
+    }
+    .doc-link:hover {
+      background: var(--blue-lt);
+      text-decoration: none;
+      border-radius: var(--radius);
+    }
+
+    /* Иконка формата */
+    .fmt {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 26px;
+      border-radius: 4px;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .03em;
+      color: #fff;
+      margin-top: 1px;
+    }
+    .fmt-pdf  { background: var(--red); }
+    .fmt-docx { background: var(--blue); }
+    .fmt-doc  { background: #3a75b0; }
+    .fmt-rtf  { background: var(--muted); }
+
+    .doc-name { flex: 1; }
+    .doc-note {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    /* Значок «Важно» */
+    .badge-important {
+      flex-shrink: 0;
+      background: var(--gold);
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      align-self: center;
+    }
+
+    /* ===== АНТИКОРРУПЦИОННЫЙ РАЗДЕЛ — другой цвет ===== */
+    .doc-section.anticorr .section-title { color: var(--red); border-color: var(--red); }
+
+    /* Подраздел внутри секции */
+    .subsection { margin-top: 18px; }
+    .subsection-title {
+      font-size: .82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    /* ===== АДАПТИВ ===== */
+    @media (max-width: 600px) {
+      .tab-nav { padding: 10px; }
+      .section-title { font-size: .97rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     ШАПКА
+════════════════════════════════════════════════ -->
+<header class="page-header">
+  <h1>Документы</h1>
+  <p>ГАУ РО «Стоматологическая поликлиника» в г. Гуково</p>
+</header>
+
+<!-- ════════════════════════════════════════════════
+     НАВИГАЦИЯ ПО РАЗДЕЛАМ
+════════════════════════════════════════════════ -->
+<nav class="tab-nav" aria-label="Разделы документов">
+  <a href="#license">Лицензия</a>
+  <a href="#tariff">Тарифы</a>
+  <a href="#org">Организация</a>
+  <a href="#finance">Финансы</a>
+  <a href="#legal">Законодательство</a>
+  <a href="#drugs">Лекпрепараты</a>
+  <a href="#kr">Клин. рекомендации</a>
+  <a href="#nok">НОК</a>
+  <a href="#anticorr">Противодействие коррупции</a>
+</nav>
+
+<div class="container">
+
+  <!-- ══════════════════════════════════════════
+       1. ЛИЦЕНЗИЯ И СПЕЦИАЛЬНАЯ ОЦЕНКА
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="license">
+    <h2 class="section-title"><span class="icon">📋</span> Лицензия и оценка условий труда</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/licenziya.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            Лицензия на осуществление медицинской деятельности
+            <div class="doc-note">Л041-01050-61/00325574</div>
+          </span>
+          <span class="badge-important">ВАЖНО</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/speczocenka.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Специальная оценка условий труда</span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       2. ТАРИФЫ И ПЛАТНЫЕ УСЛУГИ
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="tariff">
+    <h2 class="section-title"><span class="icon">💰</span> Тарифы и платные услуги</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/prejskurant_platnye.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            Прейскурант платных медицинских услуг
+            <div class="doc-note">Действует с 01.08.2025 · Приказ № 85А от 31.07.2025</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/prejskurant_lgotnye.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            Прейскурант для льготных категорий граждан
+            <div class="doc-note">Действует с 01.08.2025 · Приказ № 85А от 31.07.2025</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/prikaz_85A.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            Приказ № 85А — Об утверждении прейскуранта
+            <div class="doc-note">31 июля 2025 г.</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/prikaz_98A.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Приказ № 98А — О предоставлении платных медицинских услуг</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/polozhenie_platnye.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Положение о порядке и условиях предоставления платных стоматологических услуг</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/postanovlenie_736.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            Постановление Правительства РФ № 736 — Правила предоставления платных медицинских услуг
+            <div class="doc-note">11 мая 2023 г.</div>
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       3. ДОКУМЕНТЫ ОРГАНИЗАЦИИ
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="org">
+    <h2 class="section-title"><span class="icon">🏥</span> Документы организации</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/poryadok_medicinskoj_pomoshi.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Порядок и условия предоставления медицинской помощи в ГАУ РО «СП» в г. Гуково</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/pravila_trudovogo.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Правила внутреннего трудового распорядка работников</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/pamyatka.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Памятка для граждан о гарантиях бесплатного оказания медицинской помощи</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/personal_data.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Политика в отношении обработки персональных данных</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/nastavnichestvo.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">О наставничестве в ГАУ РО «СП» в г. Гуково</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/prikaz_81.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Приказ № 81 — Учётная политика для целей бухгалтерского учёта</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/prikaz_82.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Приказ № 82 — Учётная политика для целей налогообложения</span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       4. ФИНАНСОВЫЕ ДОКУМЕНТЫ
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="finance">
+    <h2 class="section-title"><span class="icon">📊</span> Финансовые документы</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/zp_2022.docx" download rel="noopener">
+          <span class="fmt fmt-docx">DOCX</span>
+          <span class="doc-name">Сведения о заработной плате за 2022 год</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/zp_2023.docx" download rel="noopener">
+          <span class="fmt fmt-docx">DOCX</span>
+          <span class="doc-name">Сведения о заработной плате за 2023 год</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/zp_2024.docx" download rel="noopener">
+          <span class="fmt fmt-docx">DOCX</span>
+          <span class="doc-name">Сведения о заработной плате за 2024 год</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/zp_2025.docx" download rel="noopener">
+          <span class="fmt fmt-docx">DOCX</span>
+          <span class="doc-name">Сведения о заработной плате за 2025 год</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/prikaz_144a.docx" download rel="noopener">
+          <span class="fmt fmt-docx">DOCX</span>
+          <span class="doc-name">
+            Приказ № 144А — Учётная политика ГАУ РО «СП» на 2026 год
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       5. НОРМАТИВНЫЕ ПРАВОВЫЕ АКТЫ
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="legal">
+    <h2 class="section-title"><span class="icon">⚖️</span> Нормативные правовые акты</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/fz_323.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            ФЗ от 21.11.2011 № 323-ФЗ
+            <div class="doc-note">Об основах охраны здоровья граждан в Российской Федерации</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/fz_326.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            ФЗ от 29.11.2010 № 326-ФЗ
+            <div class="doc-note">Об обязательном медицинском страховании в Российской Федерации</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/prikaz_388n.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Приказ № 388н — Порядок оказания скорой медицинской помощи</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/fz_potrebiteli.rtf" download rel="noopener">
+          <span class="fmt fmt-rtf">RTF</span>
+          <span class="doc-name">
+            Закон РФ от 07.02.1992 № 2300-I
+            <div class="doc-note">О защите прав потребителей</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/fz_narkotiki.rtf" download rel="noopener">
+          <span class="fmt fmt-rtf">RTF</span>
+          <span class="doc-name">
+            ФЗ от 08.01.1998 № 3-ФЗ
+            <div class="doc-note">О наркотических средствах и психотропных веществах</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/postanovlenie_oms_2025.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            Постановление № 23 от 22.01.2025
+            <div class="doc-note">Территориальная программа ОМС Ростовской области на 2025 год</div>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/postanovlenie_339_2026.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">
+            Постановление № 339 от 29.12.2025
+            <div class="doc-note">Об оказании медицинской помощи на 2026 год</div>
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       6. ЛЕКАРСТВЕННЫЕ ПРЕПАРАТЫ
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="drugs">
+    <h2 class="section-title"><span class="icon">💊</span> Лекарственные препараты</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/lekpreparaty.pdf" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf">PDF</span>
+          <span class="doc-name">Перечень жизненно необходимых и важнейших лекарственных препаратов (ЖНВЛП)</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/zhvlp.rtf" download rel="noopener">
+          <span class="fmt fmt-rtf">RTF</span>
+          <span class="doc-name">
+            Распоряжение Правительства РФ от 12.10.2019 № 2406-р
+            <div class="doc-note">Перечень ЖНВЛП</div>
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       7. КЛИНИЧЕСКИЕ РЕКОМЕНДАЦИИ
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="kr">
+    <h2 class="section-title"><span class="icon">🦷</span> Клинические рекомендации (протоколы лечения)</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/kr_1.doc" download rel="noopener">
+          <span class="fmt fmt-doc">DOC</span>
+          <span class="doc-name">Клинические рекомендации: Кариес зубов</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/kr_2.doc" download rel="noopener">
+          <span class="fmt fmt-doc">DOC</span>
+          <span class="doc-name">Клинические рекомендации: Болезни пульпы зуба</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/kr_3.doc" download rel="noopener">
+          <span class="fmt fmt-doc">DOC</span>
+          <span class="doc-name">Клинические рекомендации: Болезни периапикальных тканей</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/kr_4.doc" download rel="noopener">
+          <span class="fmt fmt-doc">DOC</span>
+          <span class="doc-name">Клинические рекомендации: Гингивит</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/kr_5.doc" download rel="noopener">
+          <span class="fmt fmt-doc">DOC</span>
+          <span class="doc-name">Клинические рекомендации: Пародонтит</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/kr_6.doc" download rel="noopener">
+          <span class="fmt fmt-doc">DOC</span>
+          <span class="doc-name">Клинические рекомендации: Острый некротический язвенный гингивит Венсана</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/kr_7.doc" download rel="noopener">
+          <span class="fmt fmt-doc">DOC</span>
+          <span class="doc-name">Клинические рекомендации: Частичное отсутствие зубов</span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       8. НОК
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="nok">
+    <h2 class="section-title"><span class="icon">⭐</span> Независимая оценка качества (НОК)</h2>
+    <ul class="doc-list">
+
+      <li>
+        <a class="doc-link" href="docs/nok.docx" download rel="noopener">
+          <span class="fmt fmt-docx">DOCX</span>
+          <span class="doc-name">Что такое независимая оценка качества</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="docs/nok_normativ.docx" download rel="noopener">
+          <span class="fmt fmt-docx">DOCX</span>
+          <span class="doc-name">Нормативно-правовая основа НОК</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="doc-link" href="https://nok.minzdrav.gov.ru/" target="_blank" rel="noopener">
+          <span class="fmt fmt-pdf" style="background:var(--green)">↗</span>
+          <span class="doc-name">
+            Оценить условия оказания медицинской помощи
+            <div class="doc-note">nok.minzdrav.gov.ru — внешний портал</div>
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       9. ПРОТИВОДЕЙСТВИЕ КОРРУПЦИИ  (папка /anticorr/)
+  ══════════════════════════════════════════════════════════ -->
+  <section class="doc-section anticorr" id="anticorr">
+    <h2 class="section-title"><span class="icon">🛡️</span> Противодействие коррупции</h2>
+
+    <!-- 9.1 Нормативные правовые акты -->
+    <div class="subsection">
+      <div class="subsection-title">Нормативные правовые акты</div>
+      <ul class="doc-list">
+
+        <li>
+          <a class="doc-link" href="anticorr/fz_273.rtf" download rel="noopener">
+            <span class="fmt fmt-rtf">RTF</span>
+            <span class="doc-name">
+              ФЗ от 25.12.2008 № 273-ФЗ
+              <div class="doc-note">О противодействии коррупции</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="docs/fz_323.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">
+              ФЗ от 21.11.2011 № 323-ФЗ
+              <div class="doc-note">Об основах охраны здоровья граждан в РФ</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/oz_218.doc" download rel="noopener">
+            <span class="fmt fmt-doc">DOC</span>
+            <span class="doc-name">
+              Областной закон РО от 12.05.2009 № 218-ЗС
+              <div class="doc-note">О противодействии коррупции в Ростовской области</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/postanovlenie_ro_92.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">
+              Постановление Правительства РО от 26.02.2013 № 92
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/postanovlenie_ro_5.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">
+              Постановление Правительства РО от 30.09.2015 № 5
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/fz_79.rtf" download rel="noopener">
+            <span class="fmt fmt-rtf">RTF</span>
+            <span class="doc-name">
+              ФЗ от 27.07.2004 № 79-ФЗ
+              <div class="doc-note">О государственной гражданской службе</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/fz_230.rtf" download rel="noopener">
+            <span class="fmt fmt-rtf">RTF</span>
+            <span class="doc-name">
+              ФЗ от 03.12.2012 № 230-ФЗ
+              <div class="doc-note">О контроле за соответствием расходов</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/fz_125.rtf" download rel="noopener">
+            <span class="fmt fmt-rtf">RTF</span>
+            <span class="doc-name">
+              ФЗ от 25.07.2006 № 125-ФЗ
+              <div class="doc-note">О ратификации Конвенции об уголовной ответственности за коррупцию</div>
+            </span>
+          </a>
+        </li>
+
+      </ul>
+    </div><!-- /subsection -->
+
+    <!-- 9.2 Указы Президента -->
+    <div class="subsection">
+      <div class="subsection-title">Указы Президента Российской Федерации</div>
+      <ul class="doc-list">
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_815.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">
+              Указ № 815 от 19.05.2008
+              <div class="doc-note">О мерах по противодействию коррупции</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_885.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">
+              Указ № 885 от 12.08.2002
+              <div class="doc-note">Об утверждении общих принципов служебного поведения</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_233.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Указ № 233 от 25.02.2011</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_309.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Указ № 309 от 02.04.2013</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_364.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Указ № 364 от 15.07.2015</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_613.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Указ № 613 от 08.07.2013</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_925.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Указ № 925 от 21.07.2010</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_1060.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Указ № 1060 от 28.07.2012</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/ukazy/u_120.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Указ № 120 от 08.03.2015</span>
+          </a>
+        </li>
+
+      </ul>
+    </div><!-- /subsection -->
+
+    <!-- 9.3 Внутренние документы -->
+    <div class="subsection">
+      <div class="subsection-title">Внутренние документы организации</div>
+      <ul class="doc-list">
+
+        <li>
+          <a class="doc-link" href="anticorr/polozhenie_antikor.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Положение об антикоррупционной политике ГАУ РО «СП» в г. Гуково</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/prikaz_25a.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">
+              Приказ № 25А — Кодекс этики и служебного поведения
+              <div class="doc-note">Правила обмена деловыми подарками</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/prikaz_27a.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">
+              Приказ № 27А — Положение о комиссии по противодействию коррупции
+              <div class="doc-note">Порядок уведомления, конфликт интересов, план мероприятий</div>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/prikaz_46a.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Приказ № 46А — О внесении изменений в состав комиссии по противодействию коррупции</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/prikaz_24a.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Приказ № 24А — Об утверждении антикоррупционного стандарта закупочной деятельности</span>
+          </a>
+        </li>
+
+      </ul>
+    </div><!-- /subsection -->
+
+    <!-- 9.4 Планы и отчёты -->
+    <div class="subsection">
+      <div class="subsection-title">Планы и отчёты о реализации мероприятий</div>
+      <ul class="doc-list">
+
+        <li>
+          <a class="doc-link" href="anticorr/plan_2025.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">План мероприятий по противодействию коррупции на 2025 год</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/otchet_2022.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Отчёт о реализации плана мероприятий за 2022 год</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/otchet_2023.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Отчёт о реализации плана мероприятий за 2023 год</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/otchet_2024.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Отчёт о реализации плана мероприятий за 2024 год</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/otchet_2025.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Отчёт о реализации плана мероприятий за 2025 год</span>
+          </a>
+        </li>
+
+      </ul>
+    </div><!-- /subsection -->
+
+    <!-- 9.5 Памятки и буклеты -->
+    <div class="subsection">
+      <div class="subsection-title">Памятки и буклеты</div>
+      <ul class="doc-list">
+
+        <li>
+          <a class="doc-link" href="anticorr/neterpimost.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Формирование нетерпимости к коррупционному поведению</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/pamyatka_zdravo.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Памятка по антикоррупционному правовому просвещению в здравоохранении</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/poryadok_obrashcheniy.pdf" target="_blank" rel="noopener">
+            <span class="fmt fmt-pdf">PDF</span>
+            <span class="doc-name">Порядок рассмотрения обращений граждан</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="doc-link" href="anticorr/telefon_doveriya.docx" download rel="noopener">
+            <span class="fmt fmt-docx">DOCX</span>
+            <span class="doc-name">Телефоны доверия</span>
+          </a>
+        </li>
+
+      </ul>
+    </div><!-- /subsection -->
+
+  </section><!-- /anticorr -->
+
+</div><!-- /container -->
+
+</body>
+</html>
