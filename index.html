@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+  /* ===== ОСНОВНЫЕ ТОКЕНЫ (из index1) ===== */
   :root {
     --blue: #1a4a7a;
     --blue-light: #2563a8;
@@ -17,6 +18,11 @@
     --text: #1c2b3a;
     --muted: #6b7a8d;
     --border: #d0daea;
+    --radius: 6px;
+    --shadow: 0 1px 4px rgba(0,0,0,.10);
+    --red: #c0392b;
+    --green: #1a7a4a;
+    --gold: #b8860b;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -192,7 +198,7 @@
   }
   .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
 
-  /* WORK HOURS BANNER */
+  /* HOURS BANNER */
   .hours-banner {
     background: var(--blue-pale);
     border-left: 4px solid var(--blue);
@@ -244,7 +250,7 @@
   .card h3 { font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 8px; }
   .card p { font-size: 13px; color: var(--muted); }
 
-  /* SECTION */
+  /* SECTION TITLE */
   .section-title {
     font-family: 'PT Serif', serif;
     font-size: 24px;
@@ -293,7 +299,7 @@
   .contact-item p, .contact-item a { font-size: 14px; font-weight: 600; color: var(--text); text-decoration: none; }
   .contact-item a:hover { color: var(--blue-light); }
 
-  /* TABLE */
+  /* TABLES */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -311,7 +317,6 @@
   tr:nth-child(even) td { background: var(--gray); }
   tr:hover td { background: var(--blue-pale); }
 
-  /* NOTICE */
   .notice {
     background: var(--blue-pale);
     border-left: 4px solid var(--blue);
@@ -322,7 +327,6 @@
   }
   .notice strong { color: var(--blue); }
 
-  /* IMPORTANT LINKS */
   .links-list { list-style: none; margin-bottom: 24px; }
   .links-list li {
     border-bottom: 1px solid var(--border);
@@ -346,7 +350,6 @@
     flex-shrink: 0;
   }
 
-  /* NEWS */
   .news-item {
     padding: 18px 0;
     border-bottom: 1px solid var(--border);
@@ -398,11 +401,79 @@
     text-align: center;
   }
 
-  /* PAGE SECTIONS (hidden by default) */
+  /* PAGES (hidden by default) */
   .page { display: none; }
   .page.active { display: block; }
 
-  /* ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ */
+  /* ===== СТИЛИ ДЛЯ ДОКУМЕНТОВ (из documents.html) ===== */
+  .doc-section {
+    margin-top: 36px;
+    scroll-margin-top: 64px;
+  }
+  .section-title .icon { font-size: 1.1rem; margin-right: 8px; }
+  .doc-list { list-style: none; }
+  .doc-list li { border-bottom: 1px solid var(--border); }
+  .doc-list li:last-child { border-bottom: none; }
+  .doc-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 4px;
+    color: var(--text);
+    font-size: 0.9rem;
+    transition: background 0.12s;
+  }
+  .doc-link:hover {
+    background: var(--blue-pale);
+    text-decoration: none;
+    border-radius: var(--radius);
+  }
+  .fmt {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 26px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: #fff;
+    margin-top: 1px;
+  }
+  .fmt-pdf  { background: var(--red); }
+  .fmt-docx { background: var(--blue); }
+  .fmt-doc  { background: #3a75b0; }
+  .fmt-rtf  { background: var(--muted); }
+  .doc-name { flex: 1; }
+  .doc-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+  .badge-important {
+    flex-shrink: 0;
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    align-self: center;
+  }
+  .doc-section.anticorr .section-title { color: var(--red); border-color: var(--red); }
+  .subsection { margin-top: 18px; }
+  .subsection-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  /* VERSION FOR VISUALLY IMPAIRED */
   body.accessible {
     font-size: 20px !important;
     background: #000 !important;
@@ -433,33 +504,6 @@
     .hours-inner { gap: 12px; }
     .logo-text h1 { font-size: 14px; }
   }
-
-  /* SCHEDULE TABLE */
-  .schedule-table th:first-child { width: 180px; }
-
-  /* BADGE */
-  .badge {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-
-  /* VIP ROW */
-  .vip-notice {
-    background: var(--blue-pale);
-    border-left: 4px solid var(--blue);
-    border-radius: 0 8px 8px 0;
-    padding: 16px 20px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    font-weight: 500;
-  }
 </style>
 </head>
 <body>
@@ -484,9 +528,8 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" onclick="showPage('home', document.querySelector('nav a'))" style="text-decoration:none;">
+    <a href="#" onclick="showPage('home', this)" style="text-decoration:none;">
       <div class="logo-icon">
-        <!-- Медицинский крест -->
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <rect x="9" y="2" width="6" height="20" rx="1" fill="white"/>
           <rect x="2" y="9" width="20" height="6" rx="1" fill="white"/>
@@ -500,7 +543,7 @@
   </div>
 </header>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
   <div class="nav-inner">
     <button class="burger" onclick="toggleMenu()" aria-label="Меню">☰</button>
@@ -540,10 +583,8 @@
   </div>
 </div>
 
-<!-- ===== HOME PAGE ===== -->
+<!-- ==================== HOME PAGE ==================== -->
 <div id="page-home" class="page active">
-
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-inner">
       <h2>Стоматологическая помощь жителям г. Гуково</h2>
@@ -554,20 +595,13 @@
       </div>
     </div>
   </div>
-
   <main>
-
-    <!-- NOTICE -->
-    <div class="notice" style="background:var(--blue-pale);border-left-color:var(--blue);">
+    <div class="notice">
       <strong>Важно!</strong> С 03.04.2025 жители Красносулинского района с правом на льготное зубопротезирование могут обслуживаться в ГАУ РО «СП» в г. Гуково. (Приказ Минздрава РО от 03.04.2025 № 520)
     </div>
-
-    <!-- VIP NOTICE -->
     <div class="info-block" style="border-left:4px solid var(--blue);background:var(--blue-pale);">
       <p>⭐ <strong>Герои Советского Союза, Герои Российской Федерации, ветераны и инвалиды ВОВ, ветераны боевых действий</strong> — обслуживаются <strong>вне очереди</strong>.</p>
     </div>
-
-    <!-- ОБ ОРГАНИЗАЦИИ -->
     <h2 class="section-title">Об организации</h2>
     <div class="info-block">
       <p>Стоматологическая поликлиника была выделена в самостоятельное учреждение в <strong>1974 году</strong> и является единственной стоматологической поликлиникой города.</p>
@@ -575,1200 +609,10 @@
       <p>ГАУ РО «СП» в г. Гуково оказывает медицинские услуги за счёт средств <strong>ОМС</strong> в объёме, предусмотренном программой государственных гарантий, а также предоставляет услуги <strong>на платной основе</strong>.</p>
       <p>Пациенту предоставляется возможность выбора врача-стоматолога. При плановых посещениях время ожидания — <strong>не более 45 минут</strong>.</p>
     </div>
-
     <h2 class="section-title">Руководство</h2>
     <div class="info-block">
       <p><strong>Исполняющий обязанности главного врача:</strong> Тихонова Ирина Юрьевна</p>
     </div>
-
     <h2 class="section-title">Вышестоящие органы</h2>
     <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://minzdrav.donland.ru/" target="_blank">Министерство здравоохранения Ростовской области</a></li>
-      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Министерство здравоохранения РФ</a></li>
-      <li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Независимая оценка качества медицинской помощи</a></li>
-    </ul>
-
-    <!-- СПОСОБЫ ЗАПИСИ -->
-    <h2 class="section-title">Способы записи на приём</h2>
-    <table>
-      <thead>
-        <tr><th>Способ записи</th><th>График доступа</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Единый портал госуслуг (ЕПГУ)</td><td>Круглосуточно</td></tr>
-        <tr><td>Региональный портал госуслуг (Здоровье Дона)</td><td>Круглосуточно</td></tr>
-        <tr><td>Чат-бот @zdrav_rnd_bot в мессенджере МАХ</td><td>Круглосуточно</td></tr>
-        <tr><td>Личное обращение в регистратуру</td><td>В часы работы поликлиники</td></tr>
-        <tr><td>Звонок в колл-центр</td><td>В часы работы поликлиники</td></tr>
-        <tr><td>По направлению врача</td><td>В часы работы поликлиники</td></tr>
-      </tbody>
-    </table>
-
-    <!-- QR КОДЫ -->
-    <h2 class="section-title">Запись через мессенджер МАХ и ВКонтакте</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px;">
-      <div style="text-align:center;">
-        <a href="https://max.ru/zdrav_rnd_bot" target="_blank">
-          <img src="images/qr_max.jpg" alt="QR код чат-бота МАХ @zdrav_rnd_bot" style="width:160px;height:160px;object-fit:contain;border-radius:8px;border:1px solid var(--border);">
-        </a>
-        <p style="font-size:13px;font-weight:600;color:var(--blue);margin-top:8px;"><a href="https://max.ru/zdrav_rnd_bot" target="_blank" style="color:var(--blue-light);">@zdrav_rnd_bot</a></p>
-        <p style="font-size:12px;color:var(--muted);">Запись к врачу, консультация,<br>больничный лист</p>
-      </div>
-      <div style="text-align:center;">
-        <a href="https://vk.com/sp_gukovo" target="_blank">
-          <img src="images/qr_vk.jpg" alt="QR код группы ВКонтакте @sp_gukovo" style="width:160px;height:160px;object-fit:contain;border-radius:8px;border:1px solid var(--border);">
-        </a>
-        <p style="font-size:13px;font-weight:600;color:var(--blue);margin-top:8px;"><a href="https://vk.com/sp_gukovo" target="_blank" style="color:var(--blue-light);">@sp_gukovo</a></p>
-        <p style="font-size:12px;color:var(--muted);">Новости и объявления<br>поликлиники</p>
-      </div>
-    </div>
-
-    <!-- АКТУАЛЬНАЯ ИНФОРМАЦИЯ -->
-    <h2 class="section-title">Актуальная информация</h2>
-    <div class="news-item">
-      <div class="news-date">Май 2026</div>
-      <h4>Горячая линия по профилактике клещевого энцефалита</h4>
-      <p>Телефон горячей линии: (863) 245-83-15, с 09:00 до 17:00 ежедневно, кроме выходных.</p>
-    </div>
-    <div class="news-item">
-      <div class="news-date">2026</div>
-      <h4>Чат-бот Министерства здравоохранения Ростовской области</h4>
-      <p>В мессенджере MAX начал работу верифицированный чат-бот @zdrav_rnd_bot. Запись к врачу, консультация, больничный лист.</p>
-    </div>
-    <div class="news-item">
-      <div class="news-date">С апреля 2025</div>
-      <h4>Льготное протезирование для жителей Красносулинского района</h4>
-      <p>Теперь жители Красносулинского района с правом на льготы могут обслуживаться в нашей поликлинике.</p>
-    </div>
-  </main>
-</div>
-
-<!-- ===== SERVICES PAGE ===== -->
-<div id="page-services" class="page">
-  <main>
-    <h2 class="section-title">Услуги поликлиники</h2>
-
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 2.8 1.3 3.8C6.5 12 6 13.5 6 15c0 3.3 2.2 6 4 7h4c1.8-1 4-3.7 4-7 0-1.5-.5-3-1.3-4.2C17.5 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/></svg></div>
-        <h3>Терапевтическая стоматология</h3>
-        <p>Лечение кариеса, пульпита, периодонтита. Пломбирование зубов.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
-        <h3>Хирургическая стоматология</h3>
-        <p>Удаление зубов, хирургическое лечение заболеваний полости рта.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <h3>Ортопедическая стоматология</h3>
-        <p>Протезирование зубов, коронки, мосты. Льготное протезирование.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2z"/></svg></div>
-        <h3>Детская стоматология</h3>
-        <p>Лечение молочных и постоянных зубов у детей. Профилактика.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-        <h3>Профилактика и гигиена</h3>
-        <p>Профессиональная чистка зубов, снятие зубного камня, фторирование.</p>
-      </div>
-    </div>
-
-    <div class="notice">
-      <strong>Оплата:</strong> наличный расчёт и банковские карты. Медицинская помощь по ОМС — бесплатно в объёме программы государственных гарантий.
-    </div>
-  </main>
-</div>
-
-<!-- ===== SCHEDULE PAGE ===== -->
-<div id="page-schedule" class="page">
-  <main>
-    <h2 class="section-title">Расписание врачей на 2026 год</h2>
-
-    <div class="info-block">
-      <p><strong>График работы:</strong> с 7:30 до 20:00</p>
-      <p>1-я смена: с 7:30 до 13:30 &nbsp;|&nbsp; 2-я смена: с 13:30 до 20:00</p>
-    </div>
-
-    <h2 class="section-title">Лечебно-хирургическое отделение</h2>
-    <div class="info-block">
-      <p><strong>Заведующий ЛХО:</strong> Тихонова Ирина Юрьевна, врач-стоматолог общей практики, высшая категория</p>
-    </div>
-
-    <p style="font-size:14px;font-weight:600;color:var(--blue);margin-bottom:10px;">Нечётные числа: с 07:30 до 13:30 &nbsp;|&nbsp; Чётные числа: с 13:30 до 20:00</p>
-    <table>
-      <thead><tr><th>ФИО</th><th>Специализация / категория</th></tr></thead>
-      <tbody>
-        <tr><td>Журавлева Валентина Васильевна</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-        <tr><td>Клочко Наталья Алексеевна</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-        <tr><td>Мясоедова Галина Валентиновна</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-        <tr><td>Нестеренко Юлия Алексеевна</td><td>Врач-стоматолог-хирург, первая категория</td></tr>
-        <tr><td>Акимова Юлия Александровна</td><td>Врач-стоматолог-терапевт</td></tr>
-        <tr><td>Гринь Елена Владимировна</td><td>Врач-стоматолог-терапевт, высшая категория</td></tr>
-      </tbody>
-    </table>
-
-    <p style="font-size:14px;font-weight:600;color:var(--blue);margin-bottom:10px;margin-top:20px;">Нечётные числа: с 13:30 до 20:00 &nbsp;|&nbsp; Чётные числа: с 07:30 до 13:30</p>
-    <table>
-      <thead><tr><th>ФИО</th><th>Специализация / категория</th></tr></thead>
-      <tbody>
-        <tr><td>Леонова Ольга Николаевна</td><td>Врач-стоматолог-хирург</td></tr>
-        <tr><td>Писаревский Александр Евгеньевич</td><td>Врач-стоматолог-терапевт</td></tr>
-        <tr><td>Гумайло Александра Игоревна</td><td>Зубной врач, детский приём, высшая категория</td></tr>
-        <tr><td>Кузнецова Наталья Владимировна</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-        <tr><td>Кондратенко Евгений Викторович</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-        <tr><td>Мазурык Татьяна Ивановна</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-        <tr><td>Нагиева Татьяна Александровна</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-        <tr><td>Трофимова Елена Юрьевна</td><td>Зубной врач, детский приём, высшая категория</td></tr>
-        <tr><td>Курилова Инна Сергеевна</td><td>Зубной врач, терапевтический приём, высшая категория</td></tr>
-      </tbody>
-    </table>
-
-    <h2 class="section-title" style="margin-top:32px;">Ортопедическое отделение</h2>
-    <div class="info-block">
-      <p><strong>Заведующий отделением:</strong> Матяш Владимир Петрович, врач-стоматолог-ортопед, с 8:00 до 18:20</p>
-    </div>
-
-    <p style="font-size:14px;font-weight:600;color:var(--blue);margin-bottom:10px;">Нечётные числа: с 13:30 до 20:00 &nbsp;|&nbsp; Чётные числа: с 07:30 до 13:30</p>
-    <table>
-      <thead><tr><th>ФИО</th><th>Специализация</th></tr></thead>
-      <tbody>
-        <tr><td>Белоус Людмила Феоктистовна</td><td>Зубной врач ортопедического приёма</td></tr>
-        <tr><td>Двирный Григорий Иванович</td><td>Зубной врач ортопедического приёма</td></tr>
-      </tbody>
-    </table>
-
-    <p style="font-size:14px;font-weight:600;color:var(--blue);margin-bottom:10px;margin-top:20px;">Нечётные числа: с 07:30 до 13:30 &nbsp;|&nbsp; Чётные числа: с 13:30 до 20:00</p>
-    <table>
-      <thead><tr><th>ФИО</th><th>Специализация</th></tr></thead>
-      <tbody>
-        <tr><td>Дьякова Галина Николаевна</td><td>Врач-стоматолог-ортопед</td></tr>
-      </tbody>
-    </table>
-
-    <h2 class="section-title" style="margin-top:32px;">Запись на приём</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://www.gosuslugi.ru/" target="_blank">Записаться через Единый портал Госуслуг (ЕПГУ)</a></li>
-      <li><span class="link-dot"></span><a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank">Записаться через портал «Здоровье Дона»</a></li>
-      <li><span class="link-dot"></span><a href="https://max.ru/gbu_ro_miac_bot" target="_blank">Записаться через чат-бот в мессенджере MAX (@zdrav_rnd_bot)</a></li>
-    </ul>
-
-    <h2 class="section-title" style="margin-top:32px;">Услуги поликлиники</h2>
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 2.8 1.3 3.8C6.5 12 6 13.5 6 15c0 3.3 2.2 6 4 7h4c1.8-1 4-3.7 4-7 0-1.5-.5-3-1.3-4.2C17.5 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/></svg></div>
-        <h3>Терапевтическая стоматология</h3>
-        <p>Лечение кариеса, пульпита, периодонтита. Пломбирование зубов.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
-        <h3>Хирургическая стоматология</h3>
-        <p>Удаление зубов, хирургическое лечение заболеваний полости рта.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <h3>Ортопедическая стоматология</h3>
-        <p>Протезирование зубов, коронки, мосты. Льготное протезирование.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2z"/></svg></div>
-        <h3>Детская стоматология</h3>
-        <p>Лечение молочных и постоянных зубов у детей. Профилактика.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-        <h3>Профилактика и гигиена</h3>
-        <p>Профессиональная чистка зубов, снятие зубного камня, фторирование.</p>
-      </div>
-    </div>
-    <div class="notice">
-      <strong>Оплата:</strong> наличный расчёт и банковские карты. Медицинская помощь по ОМС — бесплатно в объёме программы государственных гарантий.
-    </div>
-  </main>
-</div>
-
-<!-- ===== TARIFFS PAGE ===== -->
-<div id="page-tariffs" class="page">
-  <main>
-    <h2 class="section-title">Прейскурант на платные услуги</h2>
-    <div class="notice">
-      Утверждён приказом № 85А от 31 июля 2025 года. Вступил в силу с 01.08.2025.
-    </div>
-
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
-      <button class="btn" style="background:var(--blue);color:white;font-size:13px;" onclick="showTariff('paid')">Платные услуги</button>
-      <button class="btn" style="background:var(--blue-light);color:white;font-size:13px;" onclick="showTariff('льготные')">Льготные категории</button>
-    </div>
-
-    <!-- ПЛАТНЫЕ УСЛУГИ -->
-    <div id="tariff-paid">
-
-    <h3 style="color:var(--blue);font-size:16px;margin-bottom:12px;">1. Ортопедическая стоматология</h3>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin-bottom:8px;">1.1. Съёмные пластиночные протезы (отечественные)</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>1 челюсть, 1 зуб</td><td>2 639,81</td></tr>
-      <tr><td>1 челюсть, 2 зуба</td><td>2 760,48</td></tr>
-      <tr><td>1 челюсть, 3 зуба</td><td>2 861,10</td></tr>
-      <tr><td>1 челюсть, 4 зуба</td><td>3 010,11</td></tr>
-      <tr><td>1 челюсть, 5 зубов</td><td>3 131,68</td></tr>
-      <tr><td>1 челюсть, 6 зубов</td><td>3 253,99</td></tr>
-      <tr><td>1 челюсть, 7 зубов</td><td>3 377,04</td></tr>
-      <tr><td>1 челюсть, 8–14 зубов</td><td>4 436,26</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.1. Съёмные пластиночные протезы (импортные)</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>1 челюсть, 1 зуб</td><td>2 638,73</td></tr>
-      <tr><td>1 челюсть, 2 зуба</td><td>2 758,32</td></tr>
-      <tr><td>1 челюсть, 3 зуба</td><td>2 859,47</td></tr>
-      <tr><td>1 челюсть, 4 зуба</td><td>3 005,81</td></tr>
-      <tr><td>1 челюсть, 5 зубов</td><td>3 126,30</td></tr>
-      <tr><td>1 челюсть, 6 зубов</td><td>3 247,34</td></tr>
-      <tr><td>1 челюсть, 7 зубов</td><td>3 369,47</td></tr>
-      <tr><td>1 челюсть, 8–14 зубов</td><td>4 421,15</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.2. Съёмные бюгельные протезы</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Бюгельный каркас (дуга верхней челюсти)</td><td>9 177,56</td></tr>
-      <tr><td>Бюгельный каркас (нижней челюсти)</td><td>9 211,66</td></tr>
-      <tr><td>Зуб литой в бюгельном протезе</td><td>1 598,55</td></tr>
-      <tr><td>Фасетка в бюгельном протезе</td><td>1 950,45</td></tr>
-      <tr><td>Седло бюгельного протеза</td><td>1 026,17</td></tr>
-      <tr><td>Лапка шинирующая в бюгельном протезе</td><td>862,95</td></tr>
-      <tr><td>Ограничитель базиса бюгельного протеза</td><td>758,23</td></tr>
-      <tr><td>Ответвление в бюгеле (компайдер)</td><td>1 267,65</td></tr>
-      <tr><td>Коронка телескопическая</td><td>2 506,36</td></tr>
-      <tr><td>Параллометрия</td><td>991,26</td></tr>
-      <tr><td>Бюгельный каркас верхний (с огнеупорной моделью)</td><td>21 279,06</td></tr>
-      <tr><td>Бюгельный каркас нижний (с огнеупорной моделью)</td><td>21 279,06</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.3. Дополнительные элементы съёмных протезов</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Гнутый кламмер из стальной проволоки</td><td>379,76</td></tr>
-      <tr><td>Литой опорно-удерживающий кламмер</td><td>1 429,12</td></tr>
-      <tr><td>Кламмер одноплечевой</td><td>1 476,14</td></tr>
-      <tr><td>Кламмер Роуча</td><td>1 681,34</td></tr>
-      <tr><td>Кламмер многозвеньевой (1 звено)</td><td>762,00</td></tr>
-      <tr><td>Кламмер кольцеобразный / двойной</td><td>1 273,87</td></tr>
-      <tr><td>Окклюзионная накладка в мостовидном протезе</td><td>773,85</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.4. Прочие работы</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Индивидуальная оттискная ложка</td><td>1 752,55</td></tr>
-      <tr><td>Армированная дуга литая</td><td>2 646,26</td></tr>
-      <tr><td>Перебазировка съёмного протеза лабораторным методом</td><td>1 602,80</td></tr>
-      <tr><td>Коррекция съёмного протеза (изготовленного в другом учреждении или по истечении гарантийного срока)</td><td>775,87</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.5. Починка съёмных протезов</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Приварка зуба (отечественные)</td><td>1 225,88</td></tr>
-      <tr><td>Приварка 2 зубов (отечественные)</td><td>1 318,01</td></tr>
-      <tr><td>Приварка 3 зубов (отечественные)</td><td>1 376,05</td></tr>
-      <tr><td>Приварка 4 зубов (отечественные)</td><td>1 536,44</td></tr>
-      <tr><td>Приварка зуба (импортные)</td><td>1 224,80</td></tr>
-      <tr><td>Приварка 2 зубов (импортные)</td><td>1 315,11</td></tr>
-      <tr><td>Приварка 3 зубов (импортные)</td><td>1 371,37</td></tr>
-      <tr><td>Приварка 4 зубов (импортные)</td><td>1 531,37</td></tr>
-      <tr><td>Починка перелома базиса самотвердеющей пластмассой</td><td>1 149,17</td></tr>
-      <tr><td>Починка двух переломов базиса</td><td>1 303,52</td></tr>
-      <tr><td>Изготовление и установка или перенос 2 кламмеров</td><td>1 437,42</td></tr>
-      <tr><td>Изготовление и установка или перенос 1 кламмера</td><td>1 186,12</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.6. Несъёмные протезы</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Коронка штампованная стальная</td><td>1 086,42</td></tr>
-      <tr><td>Коронка штампованная стальная бюгельная</td><td>1 210,48</td></tr>
-      <tr><td>Коронка штампованная стальная с пластмассовой облицовкой</td><td>1 662,98</td></tr>
-      <tr><td>Зуб литой из стали</td><td>1 777,59</td></tr>
-      <tr><td>Зуб литой из стали с пластмассовой фасеткой</td><td>2 363,12</td></tr>
-      <tr><td>Литой штифтовый зуб из стали</td><td>2 106,01</td></tr>
-      <tr><td>Коронка пластмассовая</td><td>1 226,30</td></tr>
-      <tr><td>Восстановление зуба вкладками</td><td>1 600,32</td></tr>
-      <tr><td>Зуб пластмассовый простой</td><td>1 191,16</td></tr>
-      <tr><td>Коронка цельнолитая</td><td>2 852,54</td></tr>
-      <tr><td>Коронка литая из стали с пластмассовой облицовкой</td><td>3 981,68</td></tr>
-      <tr><td>Коронка литая из КХС</td><td>4 791,30</td></tr>
-      <tr><td>Коронка литая из КХС с пластмассовой облицовкой</td><td>5 322,06</td></tr>
-      <tr><td>Зуб литой из КХС</td><td>2 933,87</td></tr>
-      <tr><td>Зуб литой из КХС с пластмассовой фасеткой</td><td>2 956,23</td></tr>
-      <tr><td>Литой штифтовый зуб из КХС</td><td>2 592,97</td></tr>
-      <tr><td>Коронка металлокерамическая</td><td>8 630,24</td></tr>
-      <tr><td>Зуб металлокерамический</td><td>8 906,48</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.8. Общие виды работ</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Приём врача-стоматолога-ортопеда первичный</td><td>402,00</td></tr>
-      <tr><td>Приём врача-стоматолога-ортопеда повторный</td><td>265,85</td></tr>
-      <tr><td>Вызов врача на дом (каждое посещение)</td><td>576,30</td></tr>
-      <tr><td>Снятие коронки штампованной</td><td>279,75</td></tr>
-      <tr><td>Снятие коронки цельнолитой / металлокерамической</td><td>378,74</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.10. Съёмные протезы из термопластического материала</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>С 1 зубом</td><td>8 662,02</td></tr>
-      <tr><td>С 2 зубами</td><td>8 738,44</td></tr>
-      <tr><td>С 3 зубами</td><td>8 814,84</td></tr>
-      <tr><td>С 4 зубами</td><td>12 639,82</td></tr>
-      <tr><td>С 5 зубами</td><td>12 688,61</td></tr>
-      <tr><td>С 6 зубами</td><td>12 741,74</td></tr>
-      <tr><td>С 7 зубами</td><td>13 023,45</td></tr>
-      <tr><td>С 8 зубами</td><td>13 037,61</td></tr>
-      <tr><td>С 9 зубами</td><td>16 720,01</td></tr>
-      <tr><td>С 10 зубами</td><td>17 134,69</td></tr>
-      <tr><td>С 11 зубами</td><td>18 529,52</td></tr>
-      <tr><td>С 12 зубами</td><td>18 774,34</td></tr>
-      <tr><td>С 13 зубами</td><td>18 912,91</td></tr>
-      <tr><td>С 14 зубами</td><td>19 069,71</td></tr>
-    </tbody></table>
-
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">3. Рентгенодиагностика</h3>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Рентгенография зубов (не более 2-х рядом стоящих)</td><td>287,62</td></tr>
-      <tr><td>Контрольный снимок</td><td>204,37</td></tr>
-    </tbody></table>
-
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">4. Физиотерапевтические процедуры</h3>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Электрофорез лекарственных препаратов при патологии полости рта</td><td>158,04</td></tr>
-      <tr><td>Электрофорез корневых каналов</td><td>188,95</td></tr>
-      <tr><td>Воздействие ультразвуком на область дёсен</td><td>183,63</td></tr>
-      <tr><td>Воздействие лазером на область дёсен</td><td>134,93</td></tr>
-      <tr><td>Диадинамотерапия</td><td>196,20</td></tr>
-    </tbody></table>
-
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">5. Терапевтические услуги (основные)</h3>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Профилактический приём врача-стоматолога</td><td>152,46</td></tr>
-      <tr><td>Приём врача-стоматолога-терапевта первичный</td><td>453,74</td></tr>
-      <tr><td>Приём врача-стоматолога-терапевта повторный</td><td>254,89</td></tr>
-      <tr><td>Глубокое фторирование эмали (одна челюсть, лак)</td><td>297,53</td></tr>
-      <tr><td>Глубокое фторирование эмали 1 зуб (Бифлюорид)</td><td>232,20</td></tr>
-      <tr><td>Запечатывание фиссуры герметиком</td><td>464,87</td></tr>
-      <tr><td>Снятие временной пломбы</td><td>390,52</td></tr>
-      <tr><td>Наложение девитализирующей пасты</td><td>317,00</td></tr>
-      <tr><td>Экстирпация пульпы (1 корневой канал)</td><td>924,46</td></tr>
-      <tr><td>Пломбирование корневого канала гуттаперчей</td><td>307,04</td></tr>
-      <tr><td>Ультразвуковое удаление зубных отложений (1 челюсть)</td><td>651,57</td></tr>
-      <tr><td>Восстановление зуба пломбой фотополимер (Filtek Z550) — I,V,VI класс</td><td>1 750,09</td></tr>
-      <tr><td>Восстановление зуба пломбой фотополимер (Filtek Z550) — II,III класс</td><td>2 137,49</td></tr>
-      <tr><td>Восстановление зуба пломбой фотополимер (Filtek Z550) — IV класс</td><td>2 684,15</td></tr>
-    </tbody></table>
-
-    <h3 style="color:var(--blue);font-size:16px;margin:24px 0 12px;">6. Хирургические услуги</h3>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Приём врача-стоматолога-хирурга первичный</td><td>300,51</td></tr>
-      <tr><td>Приём врача-стоматолога-хирурга повторный</td><td>149,66</td></tr>
-      <tr><td>Удаление постоянного зуба</td><td>432,33</td></tr>
-      <tr><td>Удаление постоянного зуба сложное</td><td>501,23</td></tr>
-      <tr><td>Удаление ретинированного / дистопированного зуба</td><td>1 371,37</td></tr>
-      <tr><td>Удаление новообразования мягких тканей (эпулис, папиллома, фиброма)</td><td>610,89</td></tr>
-      <tr><td>Цистотомия / цистэктомия (без резекции верхушки корня)</td><td>1 164,66</td></tr>
-      <tr><td>Гемисекция зуба</td><td>928,51</td></tr>
-      <tr><td>Лечение перикоронита</td><td>465,24</td></tr>
-      <tr><td>Альвеолит (ревизия лунки)</td><td>470,33</td></tr>
-      <tr><td>Лечение периостита / вскрытие абсцесса</td><td>459,93</td></tr>
-      <tr><td>Пластика уздечки языка / верхней губы / нижней губы</td><td>625,67</td></tr>
-      <tr><td>Наложение шва (нить викрил)</td><td>281,14</td></tr>
-      <tr><td>Инфильтрационная анестезия (убистезин)</td><td>424,17</td></tr>
-      <tr><td>Инфильтрационная анестезия (ультракаин ДС)</td><td>423,81</td></tr>
-      <tr><td>Проводниковая анестезия (артикаин 1:100 000)</td><td>442,51</td></tr>
-    </tbody></table>
-
-    </div><!-- end tariff-paid -->
-
-    <!-- ЛЬГОТНЫЕ -->
-    <div id="tariff-льготные" style="display:none;">
-    <div class="notice">
-      Прейскурант для льготных категорий граждан. Приказ № 85А от 31.07.2025.
-    </div>
-
-    <h3 style="color:var(--blue);font-size:16px;margin-bottom:12px;">Кто имеет право на льготное протезирование</h3>
-    <div class="info-block">
-      <p>• Ветераны боевых действий</p>
-      <p>• Герои Советского Союза, Герои РФ, Герои Социалистического Труда</p>
-      <p>• Ветераны и инвалиды Великой Отечественной войны</p>
-      <p>• Ветераны труда (Областной закон № 175-ЗС)</p>
-      <p>• Ветераны труда Ростовской области (Областной закон № 763-ЗС)</p>
-      <p>• Труженики тыла (Областной закон № 163-ЗС)</p>
-      <p>• Граждане, пострадавшие от политических репрессий (Областной закон № 164-ЗС)</p>
-      <p>• Жители Красносулинского района с правом на льготы — с 03.04.2025</p>
-    </div>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin-bottom:8px;">1.1. Съёмные пластиночные протезы (льготные, отечественные)</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>1 челюсть, 1 зуб</td><td>1 996,21</td></tr>
-      <tr><td>1 челюсть, 2 зуба</td><td>2 100,77</td></tr>
-      <tr><td>1 челюсть, 3 зуба</td><td>2 186,14</td></tr>
-      <tr><td>1 челюсть, 4 зуба</td><td>2 315,47</td></tr>
-      <tr><td>1 челюсть, 5 зубов</td><td>2 420,22</td></tr>
-      <tr><td>1 челюсть, 6 зубов</td><td>2 525,51</td></tr>
-      <tr><td>1 челюсть, 7 зубов</td><td>2 631,34</td></tr>
-      <tr><td>1 челюсть, 8–14 зубов</td><td>3 516,78</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.2. Съёмные бюгельные протезы (льготные)</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Бюгельный каркас (дуга верхней челюсти)</td><td>7 713,51</td></tr>
-      <tr><td>Бюгельный каркас (нижней челюсти)</td><td>7 738,44</td></tr>
-      <tr><td>Зуб литой в бюгельном протезе</td><td>1 393,90</td></tr>
-      <tr><td>Фасетка в бюгельном протезе</td><td>1 644,22</td></tr>
-      <tr><td>Седло бюгельного протеза</td><td>877,82</td></tr>
-      <tr><td>Лапка шинирующая</td><td>741,63</td></tr>
-      <tr><td>Ограничитель базиса</td><td>635,16</td></tr>
-      <tr><td>Ответвление в бюгеле (компайдер)</td><td>1 082,46</td></tr>
-      <tr><td>Параллометрия</td><td>948,16</td></tr>
-      <tr><td>Бюгельный каркас верхний (с огнеупорной моделью)</td><td>20 353,88</td></tr>
-      <tr><td>Бюгельный каркас нижний (с огнеупорной моделью)</td><td>20 353,88</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.6. Несъёмные протезы (льготные)</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Коронка штампованная стальная</td><td>868,57</td></tr>
-      <tr><td>Коронка штампованная стальная бюгельная</td><td>961,33</td></tr>
-      <tr><td>Коронка штампованная с пластмассовой облицовкой</td><td>1 306,29</td></tr>
-      <tr><td>Зуб литой из стали</td><td>1 553,45</td></tr>
-      <tr><td>Зуб литой из стали с пластмассовой фасеткой</td><td>1 989,96</td></tr>
-      <tr><td>Литой штифтовый зуб из стали</td><td>1 784,42</td></tr>
-      <tr><td>Коронка пластмассовая</td><td>982,18</td></tr>
-      <tr><td>Восстановление зуба вкладками</td><td>1 277,16</td></tr>
-      <tr><td>Коронка цельнолитая</td><td>2 388,74</td></tr>
-      <tr><td>Коронка литая из КХС</td><td>3 896,38</td></tr>
-      <tr><td>Коронка литая из КХС с пластмассовой облицовкой</td><td>4 302,39</td></tr>
-      <tr><td>Зуб литой из КХС</td><td>2 504,34</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">1.8. Общие виды работ (льготные)</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Приём врача-стоматолога-ортопеда первичный</td><td>328,28</td></tr>
-      <tr><td>Приём врача-стоматолога-ортопеда повторный</td><td>228,74</td></tr>
-      <tr><td>Вызов врача на дом (каждое посещение)</td><td>455,03</td></tr>
-      <tr><td>Снятие коронки штампованной</td><td>237,97</td></tr>
-      <tr><td>Снятие коронки цельнолитой / металлокерамической</td><td>316,03</td></tr>
-    </tbody></table>
-
-    <p style="font-weight:600;font-size:14px;color:var(--blue);margin:16px 0 8px;">Рентгенодиагностика (льготные)</p>
-    <table><thead><tr><th>Наименование услуги</th><th>Цена (руб.)</th></tr></thead><tbody>
-      <tr><td>Рентгенография зубов (не более 2-х рядом стоящих)</td><td>225,39</td></tr>
-    </tbody></table>
-
-    </div><!-- end tariff-льготные -->
-
-  </main>
-</div>
-
-<!-- ===== PATIENTS PAGE ===== -->
-<div id="page-patients" class="page">
-  <main>
-    <h2 class="section-title">Информация для пациентов</h2>
-
-    <div class="vip-notice">
-      ⭐ <strong>Герои Советского Союза, Герои РФ, ветераны и инвалиды ВОВ, ветераны боевых действий</strong> — обслуживаются <strong>вне очереди</strong>.
-    </div>
-
-    <h2 class="section-title">Права пациентов</h2>
-    <div class="info-block">
-      <p>• Выбор врача-стоматолога</p>
-      <p>• Получение медицинской помощи по ОМС бесплатно</p>
-      <p>• Медицинская помощь вне очереди при острых заболеваниях</p>
-      <p>• По экстренным показаниям — с момента обращения</p>
-    </div>
-
-    <h2 class="section-title">Электронные медицинские документы на Госуслугах</h2>
-    <div class="info-block">
-      <p>На портале Госуслуг доступны:</p>
-      <p>• Направление на госпитализацию, обследование, консультации</p>
-      <p>• Протоколы исследований и консультаций</p>
-      <p>• Результаты диспансеризации</p>
-      <p>• Выписной эпикриз</p>
-      <p>• Справки об отсутствии контактов с инфекционными больными</p>
-      <p style="margin-top:10px;"><strong>Рекомендуем использовать браузеры Яндекс или Атом</strong> для корректной работы сервисов.</p>
-    </div>
-
-    <h2 class="section-title">Часто задаваемые вопросы</h2>
-    <div class="info-block">
-      <p><strong>Как записаться на приём?</strong><br>
-      Через Госуслуги, портал Здоровье Дона, по телефону регистратуры (86361) 5-60-99 или лично.</p>
-      <p style="margin-top:14px;"><strong>Сколько ждать в очереди?</strong><br>
-      При плановом приёме — не более 45 минут. При острой боли — принимают вне очереди.</p>
-      <p style="margin-top:14px;"><strong>Как оплатить услуги?</strong><br>
-      Наличный расчёт или банковская карта. Услуги по ОМС — бесплатно.</p>
-    </div>
-
-    <h2 class="section-title">Нормативные документы</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Независимая оценка качества условий оказания медицинской помощи</a></li>
-    </ul>
-
-    <h2 class="section-title">Доступная среда</h2>
-    <div class="info-block">
-      <p>ГАУ РО «СП» в г. Гуково обеспечивает доступность медицинской помощи для людей с ограниченными возможностями здоровья.</p>
-      <p>По вопросам доступной среды обращайтесь по телефону приёмной: <a href="tel:+78636157020"><strong>(86361) 5-70-20</strong></a></p>
-    </div>
-  </main>
-</div>
-
-<!-- ===== DOCUMENTS PAGE ===== -->
-<div id="page-docs" class="page">
-  <main>
-    <h2 class="section-title">Документы</h2>
-    <div class="notice">
-      Нажмите на название документа для просмотра или скачивания. Документы в форматах PDF, DOC, RTF.
-    </div>
-
-    <!-- УЧРЕДИТЕЛЬ -->
-    <h2 class="section-title">Сведения об учредителе</h2>
-    <div class="info-block">
-      <p><strong>Учредитель:</strong> Министерство здравоохранения Ростовской области</p>
-      <p><strong>Адрес:</strong> 344010, г. Ростов-на-Дону, пер. Доломановский, д. 70</p>
-      <p><strong>Телефон:</strong> <a href="tel:+78632401111">(863) 240-11-11</a></p>
-      <p><strong>Сайт:</strong> <a href="https://minzdrav.donland.ru/" target="_blank">minzdrav.donland.ru</a></p>
-      <p style="margin-top:10px;"><strong>Полное наименование организации:</strong> Государственное автономное учреждение Ростовской области «Стоматологическая поликлиника» в г. Гуково</p>
-      <p><strong>ОГРН:</strong> указан в свидетельстве о регистрации</p>
-      <p><strong>ИНН:</strong> указан в регистрационных документах</p>
-      <p><strong>Юридический адрес:</strong> 347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51</p>
-    </div>
-
-    <!-- ЛИЦЕНЗИЯ -->
-    <h2 class="section-title">Лицензия и регистрационные документы</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/Л041-01050-61_00325574.pdf" target="_blank">⭐ Лицензия на осуществление медицинской деятельности № Л041-01050-61/00325574</a></li>
-      <li><span class="link-dot"></span><a href="docs/specialnaja_ocenka_uslovij_truda.pdf" target="_blank">Специальная оценка условий труда</a></li>
-    </ul>
-
-    <!-- ТАРИФЫ -->
-    <h2 class="section-title">Тарифы и платные услуги</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/prejskurant_na_01_08_2025_na_platnye_medicinskie_u.pdf" target="_blank">Прейскурант платных медицинских услуг (с 01.08.2025, Приказ № 85А)</a></li>
-      <li><span class="link-dot"></span><a href="docs/prejskurant_na_01_08_2025_lgotnye_kategorii_grazhd.pdf" target="_blank">Прейскурант для льготных категорий граждан (с 01.08.2025, Приказ № 85А)</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_98A.pdf" target="_blank">Приказ № 98А — О предоставлении платных медицинских услуг</a></li>
-      <li><span class="link-dot"></span><a href="docs/polozhenie_o_predostavlenii_platnykh_uslug.pdf" target="_blank">Положение о порядке и условиях предоставления платных стоматологических услуг</a></li>
-      <li><span class="link-dot"></span><a href="docs/postanovlenie_pravitelstva_rf_ot_11.05.2023_n_736_.rtf" target="_blank">Постановление Правительства РФ от 11.05.2023 № 736 «О правилах предоставления платных медицинских услуг»</a></li>
-    </ul>
-
-    <!-- ДОКУМЕНТЫ ОРГАНИЗАЦИИ -->
-    <h2 class="section-title">Документы организации</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/porjadok_1.doc" target="_blank">Порядок и условия предоставления медицинской помощи в ГАУ РО «СП» в г. Гуково</a></li>
-      <li><span class="link-dot"></span><a href="docs/pravila_vnutrennego_trudovogo_rasporjadka_rabotnik.doc" target="_blank">Правила внутреннего трудового распорядка работников</a></li>
-      <li><span class="link-dot"></span><a href="docs/pamjatka.docx" target="_blank">Памятка для граждан о гарантиях бесплатного оказания медицинской помощи</a></li>
-      <li><span class="link-dot"></span><a href="docs/politika_pers_dannye_na_sajt.docx" target="_blank">Политика в отношении обработки персональных данных</a></li>
-      <li><span class="link-dot"></span><a href="docs/np.docx" target="_blank">Нормативные правовые документы организации</a></li>
-      <li><span class="link-dot"></span><a href="docs/nastavnichestvo_gau_ro_sp_v_g-gukovo.pdf" target="_blank">Приказ № 34А — О наставничестве в ГАУ РО СП в г. Гуково</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz131.pdf" target="_blank">Приказ № 131</a></li>
-      <li><span class="link-dot"></span><a href="docs/Untitled111.pdf" target="_blank">Документ организации</a></li>
-    </ul>
-
-    <!-- ФИНАНСЫ -->
-    <h2 class="section-title">Финансовые документы</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/svedenija_o_zarabotnoj_plate_za_2022_god.docx" target="_blank">Сведения о заработной плате за 2022 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/svedenija_o_zarabotnoj_plate_za_2023_god.docx" target="_blank">Сведения о заработной плате за 2023 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/2024.docx" target="_blank">Сведения о заработной плате за 2024 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/2025.docx" target="_blank">Сведения о заработной плате за 2025 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz-144-a_uchetnaja_politika_gau_ro_sp_v_g-guko.docx" target="_blank">Приказ №144-А — Учётная политика ГАУ РО СП на 2026 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_82_ob_utverzhdenii_uchetnoj_politiki_dlja_c.pdf" target="_blank">Приказ № 82 — Учётная политика для целей налогообложения</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_81_ob_utverzhdenii_uchetnoj_politiki_dlja_c.pdf" target="_blank">Приказ № 81 — Учётная политика для целей бухгалтерского учёта</a></li>
-    </ul>
-
-    <!-- НОРМАТИВНЫЕ АКТЫ -->
-    <h2 class="section-title">Нормативные правовые акты</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/323_fz.pdf" target="_blank">ФЗ № 323 от 21.11.2011 «Об основах охраны здоровья граждан в РФ»</a></li>
-      <li><span class="link-dot"></span><a href="docs/326fz24022021.pdf" target="_blank">ФЗ № 326 от 29.11.2010 «Об обязательном медицинском страховании в РФ»</a></li>
-      <li><span class="link-dot"></span><a href="docs/388n.pdf" target="_blank">Приказ № 388н — Порядок оказания скорой медицинской помощи</a></li>
-      <li><span class="link-dot"></span><a href="docs/zakon_rf_ot_07.02.92_n_2300-i_o_zashhite_prav_potr.rtf" target="_blank">Закон РФ № 2300-I «О защите прав потребителей»</a></li>
-      <li><span class="link-dot"></span><a href="docs/federalnyj_zakon_ot_08.01.98_n_3-fz_o_narkotichesk.rtf" target="_blank">ФЗ № 3-ФЗ «О наркотических средствах и психотропных веществах»</a></li>
-      <li><span class="link-dot"></span><a href="docs/22.01.2025_23_postanovlenie_oms.pdf" target="_blank">Постановление № 23 от 22.01.2025 — Территориальная программа ОМС Ростовской области</a></li>
-      <li><span class="link-dot"></span><a href="docs/29.12.2025_339.pdf" target="_blank">Постановление № 339 от 29.12.2025 — Об оказании медицинской помощи на 2026 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/rasporjazhenie_pravitelstva_rf_ot_12.10.2019_n_240.rtf" target="_blank">Распоряжение Правительства РФ № 2406-р — Перечень ЖНВЛП</a></li>
-    </ul>
-
-    <!-- ЛЕКАРСТВА -->
-    <h2 class="section-title">Перечни лекарственных препаратов</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/lekpreparaty.pdf" target="_blank">Перечень жизненно необходимых и важнейших лекарственных препаратов</a></li>
-      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Перечень лекарственных препаратов, отпускаемых населению бесплатно и со скидкой</a></li>
-      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Перечень лекарственных препаратов, назначаемых по решению врачебных комиссий</a></li>
-    </ul>
-
-    <!-- НОК -->
-    <h2 class="section-title">Независимая оценка качества (НОК)</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/nok.docx" target="_blank">Что такое НОК</a></li>
-      <li><span class="link-dot"></span><a href="docs/normativno_provavaja_forma_nok.docx" target="_blank">Нормативно-правовая основа НОК</a></li>
-      <li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Оставить отзыв о качестве медицинской помощи (Минздрав РФ)</a></li>
-      <li><span class="link-dot"></span><a href="https://pos.gosuslugi.ru/" target="_blank">Оставить отзыв через портал «Решаем вместе»</a></li>
-    </ul>
-
-    <!-- ЖАЛОБЫ -->
-    <h2 class="section-title">Куда направить жалобу или обращение</h2>
-    <div class="info-block">
-      <p><strong>Руководство поликлиники:</strong></p>
-      <p>• Почтовый адрес: 347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51</p>
-      <p>• Email: <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a></p>
-      <p>• Телефон приёмной: <a href="tel:+78636157020">(86361) 5-70-20</a></p>
-      <p style="margin-top:10px;"><strong>Вышестоящие органы:</strong></p>
-      <p>• Министерство здравоохранения РО: <a href="https://minzdrav.donland.ru/" target="_blank">minzdrav.donland.ru</a>, тел. (863) 240-11-11</p>
-      <p>• Росздравнадзор: <a href="https://roszdravnadzor.gov.ru/" target="_blank">roszdravnadzor.gov.ru</a></p>
-      <p>• ТФОМС Ростовской области: <a href="https://www.rostovoms.ru/" target="_blank">rostovoms.ru</a></p>
-      <p>• Портал «Решаем вместе»: <a href="https://pos.gosuslugi.ru/" target="_blank">pos.gosuslugi.ru</a></p>
-    </div>
-
-  </main>
-</div>
-
-    <h2 class="section-title">Лицензия и регистрационные документы</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/licenziya.pdf" target="_blank">⭐ Лицензия на осуществление медицинской деятельности (Л041-01050-61/00325574)</a></li>
-      <li><span class="link-dot"></span><a href="docs/ogrnip.pdf" target="_blank">Свидетельство о государственной регистрации (ОГРН)</a></li>
-      <li><span class="link-dot"></span><a href="docs/specialnaja_ocenka_uslovij_truda.pdf" target="_blank">Специальная оценка условий труда</a></li>
-    </ul>
-
-    <h2 class="section-title">Тарифы и платные услуги</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/prejskurant_platnye.pdf" target="_blank">Прейскурант платных медицинских услуг (с 01.08.2025, Приказ № 85А)</a></li>
-      <li><span class="link-dot"></span><a href="docs/prejskurant_lgotnye.pdf" target="_blank">Прейскурант для льготных категорий граждан (с 01.08.2025, Приказ № 85А)</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_85A.pdf" target="_blank">Приказ № 85А от 31.07.2025 — Об утверждении прейскуранта</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_98A.pdf" target="_blank">Приказ № 98А — О предоставлении платных медицинских услуг</a></li>
-      <li><span class="link-dot"></span><a href="docs/polozhenie_o_predostavlenii_platnykh_uslug.pdf" target="_blank">Положение о порядке и условиях предоставления платных стоматологических услуг</a></li>
-      <li><span class="link-dot"></span><a href="docs/postanovlenie_pravitelstva_rf_ot_11.05.2023_n_736_.rtf" target="_blank">Постановление Правительства РФ от 11.05.2023 № 736 «О правилах предоставления платных медицинских услуг»</a></li>
-    </ul>
-
-    <h2 class="section-title">Документы организации</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/porjadok_1.doc" target="_blank">Порядок и условия предоставления медицинской помощи в ГАУ РО «СП» в г. Гуково</a></li>
-      <li><span class="link-dot"></span><a href="docs/pravila_vnutrennego_trudovogo_rasporjadka_rabotnik.doc" target="_blank">Правила внутреннего трудового распорядка работников</a></li>
-      <li><span class="link-dot"></span><a href="docs/pamjatka.docx" target="_blank">Памятка для граждан о гарантиях бесплатного оказания медицинской помощи</a></li>
-      <li><span class="link-dot"></span><a href="docs/politika_pers_dannye_na_sajt.docx" target="_blank">Политика в отношении обработки персональных данных</a></li>
-      <li><span class="link-dot"></span><a href="docs/np.docx" target="_blank">Нормативные правовые документы организации</a></li>
-      <li><span class="link-dot"></span><a href="docs/nastavnichestvo_gau_ro_sp_v_g-gukovo.pdf" target="_blank">Приказ № 34А — О наставничестве в ГАУ РО СП в г. Гуково</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz131.pdf" target="_blank">Приказ № 131</a></li>
-      <li><span class="link-dot"></span><a href="docs/Untitled111.pdf" target="_blank">Документ (уточнить название)</a></li>
-    </ul>
-
-    <h2 class="section-title">Финансовые документы</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/svedenija_o_zarabotnoj_plate_za_2022_god.docx" target="_blank">Сведения о заработной плате за 2022 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/svedenija_o_zarabotnoj_plate_za_2023_god.docx" target="_blank">Сведения о заработной плате за 2023 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/2024.docx" target="_blank">Сведения о заработной плате за 2024 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/2025.docx" target="_blank">Сведения о заработной плате за 2025 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz-144-a_uchetnaja_politika_gau_ro_sp_v_g-guko.docx" target="_blank">Приказ №144-А — Учётная политика ГАУ РО СП на 2026 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_82_ob_utverzhdenii_uchetnoj_politiki_dlja_c.pdf" target="_blank">Приказ № 82 — Учётная политика для целей налогообложения</a></li>
-      <li><span class="link-dot"></span><a href="docs/prikaz_81_ob_utverzhdenii_uchetnoj_politiki_dlja_c.pdf" target="_blank">Приказ № 81 — Учётная политика для целей бухгалтерского учёта</a></li>
-    </ul>
-
-    <h2 class="section-title">Нормативные правовые акты</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/323_fz.pdf" target="_blank">ФЗ № 323 от 21.11.2011 «Об основах охраны здоровья граждан в РФ»</a></li>
-      <li><span class="link-dot"></span><a href="docs/326fz24022021.pdf" target="_blank">ФЗ № 326 от 29.11.2010 «Об обязательном медицинском страховании в РФ»</a></li>
-      <li><span class="link-dot"></span><a href="docs/388n.pdf" target="_blank">Приказ № 388н — Порядок оказания скорой медицинской помощи</a></li>
-      <li><span class="link-dot"></span><a href="docs/zakon_rf_ot_07.02.92_n_2300-i_o_zashhite_prav_potr.rtf" target="_blank">Закон РФ № 2300-I «О защите прав потребителей»</a></li>
-      <li><span class="link-dot"></span><a href="docs/federalnyj_zakon_ot_08.01.98_n_3-fz_o_narkotichesk.rtf" target="_blank">ФЗ № 3-ФЗ от 08.01.1998 «О наркотических средствах и психотропных веществах»</a></li>
-      <li><span class="link-dot"></span><a href="docs/22.01.2025_23_postanovlenie_oms.pdf" target="_blank">Постановление № 23 от 22.01.2025 — Территориальная программа ОМС Ростовской области</a></li>
-      <li><span class="link-dot"></span><a href="docs/29.12.2025_339.pdf" target="_blank">Постановление № 339 от 29.12.2025 — Об оказании медицинской помощи на 2026 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/rasporjazhenie_pravitelstva_rf_ot_12.10.2019_n_240.rtf" target="_blank">Распоряжение Правительства РФ от 12.10.2019 № 2406-р — Перечень ЖНВЛП</a></li>
-    </ul>
-
-    <h2 class="section-title">Перечни лекарственных препаратов</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/lekpreparaty.pdf" target="_blank">Перечень жизненно необходимых и важнейших лекарственных препаратов</a></li>
-      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Перечень лекарственных препаратов, отпускаемых населению бесплатно и со скидкой</a></li>
-      <li><span class="link-dot"></span><a href="https://www.rosminzdrav.ru/" target="_blank">Перечень лекарственных препаратов, назначаемых по решению врачебных комиссий</a></li>
-    </ul>
-
-    <h2 class="section-title">Клинические рекомендации (протоколы лечения)</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://cr.minzdrav.gov.ru/" target="_blank">При диагнозе «Кариес зубов»</a></li>
-      <li><span class="link-dot"></span><a href="https://cr.minzdrav.gov.ru/" target="_blank">При диагнозе «Болезни пульпы зуба»</a></li>
-      <li><span class="link-dot"></span><a href="https://cr.minzdrav.gov.ru/" target="_blank">При диагнозе «Болезни периапикальных тканей»</a></li>
-      <li><span class="link-dot"></span><a href="https://cr.minzdrav.gov.ru/" target="_blank">При диагнозе «Гингивит»</a></li>
-      <li><span class="link-dot"></span><a href="https://cr.minzdrav.gov.ru/" target="_blank">При диагнозе «Пародонтит»</a></li>
-      <li><span class="link-dot"></span><a href="https://cr.minzdrav.gov.ru/" target="_blank">При диагнозе «Острый некротический язвенный гингивит Венсана»</a></li>
-      <li><span class="link-dot"></span><a href="https://cr.minzdrav.gov.ru/" target="_blank">При диагнозе «Частичное отсутствие зубов»</a></li>
-    </ul>
-
-    <h2 class="section-title">Независимая оценка качества (НОК)</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/nok.docx" target="_blank">Что такое НОК</a></li>
-      <li><span class="link-dot"></span><a href="docs/normativno_provavaja_forma_nok.docx" target="_blank">Нормативно-правовая основа НОК</a></li>
-      <li><span class="link-dot"></span><a href="https://nok.minzdrav.gov.ru/" target="_blank">Независимая оценка качества условий оказания медицинской помощи — оценить</a></li>
-      <li><span class="link-dot"></span><a href="https://bus.gov.ru/" target="_blank">Оставить отзыв на bus.gov.ru</a></li>
-    </ul>
-
-    <h2 class="section-title">Адрес для направления жалоб и обращений</h2>
-    <div class="info-block">
-      <p><strong>Почтовый адрес:</strong> 347881, Ростовская область, г. Гуково, ул. Карла Маркса, 51</p>
-      <p><strong>Email:</strong> <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a></p>
-      <p><strong>Телефон приёмной:</strong> <a href="tel:+78636157020">(86361) 5-70-20</a></p>
-      <p style="margin-top:10px;"><strong>Вышестоящие органы:</strong></p>
-      <p>• Министерство здравоохранения РО: <a href="https://minzdrav.donland.ru/" target="_blank">minzdrav.donland.ru</a>, тел. (863) 240-11-11</p>
-      <p>• Росздравнадзор: <a href="https://roszdravnadzor.gov.ru/" target="_blank">roszdravnadzor.gov.ru</a></p>
-      <p>• Портал «Решаем вместе»: <a href="https://pos.gosuslugi.ru/" target="_blank">pos.gosuslugi.ru</a></p>
-    </div>
-
-  </main>
-</div>
-
-<!-- ===== ANTICORRUPTION PAGE ===== -->
-<div id="page-anticorr" class="page">
-  <main>
-    <h2 class="section-title">Противодействие коррупции</h2>
-
-    <div class="info-block">
-      <p>ГАУ РО «СП» в г. Гуково проводит политику нетерпимости к проявлениям коррупции и принимает меры по её предупреждению.</p>
-      <p style="margin-top:10px;"><strong>Ответственный за профилактику коррупционных правонарушений:</strong><br>
-      Бондарева Наталья Михайловна, главный бухгалтер</p>
-      <p>Email: <a href="mailto:buhgalterstom@rambler.ru">buhgalterstom@rambler.ru</a></p>
-      <p>Время работы: понедельник–пятница, 9:00–17:00</p>
-    </div>
-
-    <h2 class="section-title">1. Нормативные правовые акты в сфере противодействия коррупции</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/anticorr/fz_273_o_protivodejstvii_korrupcii.rtf" target="_blank">ФЗ от 25.12.2008 № 273-ФЗ «О противодействии коррупции»</a></li>
-      <li><span class="link-dot"></span><a href="docs/323_fz.pdf" target="_blank">ФЗ от 21.11.2011 № 323-ФЗ «Об основах охраны здоровья граждан в РФ»</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/oz218_red21.doc" target="_blank">Областной закон РО от 12.05.2009 № 218-ЗС «О противодействии коррупции в Ростовской области»</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/postanovlenie_pravitelstva_ro_ot_26.02.2013_n_92_o.pdf" target="_blank">Постановление Правительства РО от 26.02.2013 № 92</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/fz_79_o_gossluzhbe.rtf" target="_blank">ФЗ от 27.07.2004 № 79-ФЗ «О государственной гражданской службе»</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/fz_230_o_kontrole_raskhodov.rtf" target="_blank">ФЗ от 03.12.2012 № 230-ФЗ «О контроле за соответствием расходов»</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/fz_125_konvencija.rtf" target="_blank">ФЗ от 25.07.2006 № 125-ФЗ «О ратификации Конвенции об уголовной ответственности за коррупцию»</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_120.pdf" target="_blank">Указ Президента РФ от 08.03.2015 № 120 «О некоторых вопросах противодействия коррупции»</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_364.pdf" target="_blank">Указ Президента РФ от 15.07.2015 № 364</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_233.pdf" target="_blank">Указ Президента РФ от 25.02.2011 № 233</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_309.pdf" target="_blank">Указ Президента РФ от 02.04.2013 № 309</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_613.pdf" target="_blank">Указ Президента РФ от 08.07.2013 № 613</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_815.pdf" target="_blank">Указ Президента РФ от 19.05.2008 № 815</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_885.pdf" target="_blank">Указ Президента РФ от 12.08.2002 № 885</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_925.pdf" target="_blank">Указ Президента РФ от 21.07.2010 № 925</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/u_1060.pdf" target="_blank">Указ Президента РФ от 28.07.2012 № 1060</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/p5_30092015.pdf" target="_blank">Постановление Правительства РО от 30.09.2015 № 5</a></li>
-    </ul>
-
-    <h2 class="section-title">Внутренние документы организации</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/anticorr/prikaz_25_a.pdf" target="_blank">Приказ 25А — Кодекс этики и служебного поведения работников, правила обмена деловыми подарками</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/polozhenie_ob_antikorrupcionnoj_politike_gau_ro_sp.pdf" target="_blank">Положение об антикоррупционной политике</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/prikaz_27_a.pdf" target="_blank">Приказ 27А — Положение о комиссии по противодействию коррупции, порядок уведомления, конфликт интересов, план мероприятий</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/prikaz_46a_vnesenie_izmenenij_sostav_komissii.pdf" target="_blank">Приказ 46А — О внесении изменений в состав комиссии по противодействию коррупции</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/prikaz_24_a.pdf" target="_blank">Приказ 24А — Об утверждении антикоррупционного стандарта закупочной деятельности</a></li>
-    </ul>
-
-    <h2 class="section-title">Планы и отчёты</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/anticorr/otchet_o_realizacii_plana.pdf" target="_blank">Отчёт о реализации плана мероприятий за 2022 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/otchjot_o_realizacii_plana_meroprijatij_po_protivo.pdf" target="_blank">Отчёт о реализации плана мероприятий за 2023 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/otchet_o_realizacii_plana_meroprijatij_po_protivod.pdf" target="_blank">Отчёт о реализации плана мероприятий за 2024 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/otchet_o_realizacii_plana_meroprijatij_po_protivod (1).pdf" target="_blank">Отчёт о реализации плана мероприятий за 2025 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/plan_2025.pdf" target="_blank">План мероприятий по противодействию коррупции на 2025 год</a></li>
-    </ul>
-
-    <h2 class="section-title">2. Обратная связь для сообщений о фактах коррупции</h2>
-    <div class="info-block">
-      <p>По фактам коррупции вы можете обратиться:</p>
-      <p>• Руководство поликлиники: <a href="tel:+78636157020">(86361) 5-70-20</a></p>
-      <p>• Email: <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a></p>
-      <p>• Прокуратура г. Гуково: г. Гуково, ул. Мира, д. 42, тел. (86361) 5-35-11</p>
-      <p>• Отдел УЭБ и ПК: тел. (86361) 2-63-003</p>
-      <p>• Портал: <a href="https://pos.gosuslugi.ru/" target="_blank">«Решаем вместе» на Госуслугах</a></p>
-    </div>
-
-    <h2 class="section-title">3. Памятки и буклеты</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="docs/anticorr/neterpimost_korrupsii.pdf" target="_blank">Формирование нетерпимости к коррупционному поведению</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/pamjatka-zdravookhranenie.pdf" target="_blank">Памятка по антикоррупционному правовому просвещению в здравоохранении</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/porjadok_obrashhenija_grazhdan_2025.pdf" target="_blank">Порядок рассмотрения обращений граждан</a></li>
-      <li><span class="link-dot"></span><a href="docs/anticorr/telefon_doverija.docx" target="_blank">Телефоны доверия</a></li>
-      <li><span class="link-dot"></span><a href="https://www.anticorruption.life/" target="_blank">Международный конкурс «Вместе против коррупции!»</a></li>
-    </ul>
-
-  </main>
-</div>
-
-<!-- ===== CONTACTS PAGE ===== -->
-<div id="page-contacts" class="page">
-  <main>
-    <h2 class="section-title">Контактные данные</h2>
-
-    <div class="contacts-grid">
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-        <div>
-          <h4>Адрес</h4>
-          <p>347881, Ростовская область,<br>г. Гуково, ул. Карла Маркса, 51</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-        <div>
-          <h4>Приёмная</h4>
-          <a href="tel:+78636157020">(86361) 5-70-20</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-        <div>
-          <h4>Регистратура</h4>
-          <a href="tel:+78636156099">(86361) 5-60-99</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-        <div>
-          <h4>Бухгалтерия</h4>
-          <a href="tel:+78636156133">(86361) 5-61-33</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-        <div>
-          <h4>Ортопедическое отделение</h4>
-          <a href="tel:+78636156783">(86361) 5-67-83</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-        <div>
-          <h4>Email</h4>
-          <a href="mailto:stomatolog1.82@mail.ru">stomatolog1.82@mail.ru</a>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="section-title">Режим работы</h2>
-    <div class="info-block">
-      <p>🕐 <strong>Понедельник – Пятница:</strong> 7:30 – 20:00</p>
-      <p>🕐 <strong>Суббота – Воскресенье:</strong> 7:30 – 13:30 (приём ведут дежурные врачи)</p>
-    </div>
-
-    <h2 class="section-title">Мы в социальных сетях</h2>
-    <ul class="links-list">
-      <li><span class="link-dot"></span><a href="https://vk.com/sp_gukovo" target="_blank">ВКонтакте: vk.com/sp_gukovo</a></li>
-    </ul>
-  </main>
-</div>
-
-<!-- ===== DOCTORS PAGE ===== -->
-<div id="page-doctors" class="page">
-  <main>
-    <h2 class="section-title">Сведения о медицинских работниках</h2>
-
-    <h3 style="color:var(--blue);font-size:15px;margin-bottom:12px;">Врачи, оказывающие платные услуги</h3>
-    <div class="info-block" style="font-size:14px;">
-      <p>1. Матяш Владимир Петрович — заведующий отделением, врач-стоматолог-ортопед</p>
-      <p>2. Дьякова Галина Николаевна — врач-стоматолог-ортопед</p>
-      <p>3. Белоус Людмила Феоктистовна — зубной врач ортопедического приёма</p>
-      <p>4. Двирный Григорий Иванович — зубной врач ортопедического приёма</p>
-      <p>5. Тихонова Ирина Юрьевна — заведующий ЛХО, врач-стоматолог общей практики, высшая категория</p>
-      <p>6. Журавлева Валентина Васильевна — зубной врач, терапевтический приём, высшая категория</p>
-      <p>7. Клочко Наталья Алексеевна — зубной врач, терапевтический приём, высшая категория</p>
-      <p>8. Мясоедова Галина Валентиновна — зубной врач, терапевтический приём, высшая категория</p>
-      <p>9. Нестеренко Юлия Алексеевна — врач-стоматолог-хирург, первая категория</p>
-      <p>10. Акимова Юлия Александровна — врач-стоматолог-терапевт</p>
-      <p>11. Гринь Елена Владимировна — врач-стоматолог-терапевт, высшая категория</p>
-      <p>12. Леонова Ольга Николаевна — врач-стоматолог-хирург</p>
-      <p>13. Писаревский Александр Евгеньевич — врач-стоматолог-терапевт</p>
-      <p>14. Гумайло Александра Игоревна — зубной врач детского приёма, высшая категория</p>
-      <p>15. Кузнецова Наталья Владимировна — зубной врач, терапевтический приём, высшая категория</p>
-      <p>16. Кондратенко Евгений Викторович — зубной врач, терапевтический приём, высшая категория</p>
-      <p>17. Мазурык Татьяна Ивановна — зубной врач, терапевтический приём, высшая категория</p>
-      <p>18. Нагиева Татьяна Александровна — зубной врач, терапевтический приём, высшая категория</p>
-      <p>19. Курилова Инна Сергеевна — зубной врач, терапевтический приём, высшая категория</p>
-    </div>
-
-    <h2 class="section-title">Сведения о медицинских работниках</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>№</th>
-          <th>ФИО, должность</th>
-          <th>Образование</th>
-          <th>Сертификат / специальность</th>
-          <th>Последнее усовершенствование</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Акимова Юлия Александровна, врач-стоматолог-терапевт</td>
-          <td>Высшее, Волгоградский государственный медицинский университет, врач-стоматолог</td>
-          <td>Стоматология терапевтическая, до 26.11.2029, № 7724 032416338</td>
-          <td>Стоматология терапевтическая, ООО «Инновационные технологии», 19.04.2023</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Белоус Людмила Феоктистовна, зубной врач ортопедического приёма</td>
-          <td>Среднее профессиональное, Ростовское базовое медицинское училище, зубной врач, высшая категория</td>
-          <td>Стоматология, до 09.10.2025, № 0761320005426</td>
-          <td>Стоматологическая помощь населению, ЧОУ ДПО «Учебно-консультационный центр «Медицинский стандарт», Рязань, 18.02.2025</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Гринь Елена Владимировна, врач-стоматолог-терапевт</td>
-          <td>Высшее, Кубанский государственный медицинский институт им. Красной Армии, Краснодар, 1981, врач-стоматолог</td>
-          <td>Стоматология терапевтическая, до 30.11.2029, № 7724 031673087</td>
-          <td>ООО «Межрегиональный научно-технический университет», 24.03.2023</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Гумайло Александра Игоревна, зубной врач детского приёма</td>
-          <td>Среднее профессиональное, Ростовский базовый медицинский колледж, 2006, зубной врач, высшая категория</td>
-          <td>Стоматология, до 27.07.2027, №2022.370865</td>
-          <td>ГБОУДПО «Центр повышения специалистов со средним медицинским и фармацевтическим образованием», 01.08.2022</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Двирный Григорий Иванович, зубной врач ортопедического приёма</td>
-          <td>Среднее профессиональное, Горловское медицинское училище МЗ УССР, Горловка, 1972, высшая категория</td>
-          <td>Стоматология, до 09.10.2025, № 0761320005425</td>
-          <td>ЧОУ ДПО «Учебно-консультационный центр «Медицинский стандарт», Рязань, 18.02.2025</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Дьякова Галина Николаевна, врач-стоматолог-ортопед</td>
-          <td>Высшее, Московский медицинский стоматологический институт, Москва, 1974, врач-стоматолог</td>
-          <td>Стоматология ортопедическая, до 18.09.2025, № 1126040008734</td>
-          <td>ЧОУ ДПО «Учебно-консультационный центр «Медицинский стандарт», 29.01.2025</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>Журавлева Валентина Васильевна, зубной врач</td>
-          <td>Среднее профессиональное, Таганрогское медицинское училище, Таганрог, 1989, зубной врач, высшая категория</td>
-          <td>Стоматология, до 09.10.2025, № 0761320005427</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 09.10.2020</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>Клочко Наталья Владимировна, зубной врач</td>
-          <td>Среднее профессиональное, Таганрогское медицинское училище, Таганрог, 1987, зубной врач, высшая категория</td>
-          <td>Стоматология, до 29.10.2029, № 7724 032346412</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 08.10.2024</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>Кондратенко Евгений Викторович, зубной врач</td>
-          <td>Среднее профессиональное, Ростовский базовый медицинский колледж, 2002, зубной врач, высшая категория</td>
-          <td>Стоматология, до 28.09.2027, № 2022.370801</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 16.10.2017</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>Кузнецова Наталья Владимировна, зубной врач</td>
-          <td>Среднее профессиональное, Таганрогское медицинское училище, Таганрог, 1988, зубной врач, высшая категория</td>
-          <td>Стоматология, до 18.12.2025, № 0761310573627</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 07.04.2021</td>
-        </tr>
-        <tr>
-          <td>11</td>
-          <td>Курилова Инна Сергеевна, зубной врач</td>
-          <td>Среднее профессиональное, Ростовский базовый медицинский колледж, 1995, зубной врач, высшая категория</td>
-          <td>Стоматология, до 18.12.2025, № 0761310573559</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 18.12.2020</td>
-        </tr>
-        <tr>
-          <td>12</td>
-          <td>Леонова Ольга Николаевна, врач-стоматолог-хирург</td>
-          <td>Высшее, Воронежский государственный университет, Воронеж, 1994, врач-стоматолог</td>
-          <td>Стоматология хирургическая, до 23.04.2029, № 7724 031868931</td>
-          <td>ЧОУ ДПО «Учебно-консультационный центр «Медицинский стандарт», Рязань, 07.02.2024</td>
-        </tr>
-        <tr>
-          <td>13</td>
-          <td>Мазурык Татьяна Ивановна, зубной врач</td>
-          <td>Среднее профессиональное, Таганрогское медицинское училище, Таганрог, 1990, зубной врач, высшая категория</td>
-          <td>Стоматология, до 26.03.2029, № 7724 031776467</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 19.02.2024</td>
-        </tr>
-        <tr>
-          <td>14</td>
-          <td>Матяш Владимир Петрович, заведующий ортопедическим отделением, врач-стоматолог-ортопед</td>
-          <td>Высшее, Кубанский государственный медицинский институт им. Красной Армии, Краснодар, 1992, врач-стоматолог</td>
-          <td>Стоматология ортопедическая, до 22.12.2025, №1126040008930; Организация здравоохранения, до 25.07.2028, № 2022.369157</td>
-          <td>ЧОУ ДПО «Институт повышения квалификации «ЮТАМЕДФАРМ», 22.12.2020; 23.04.2018</td>
-        </tr>
-        <tr>
-          <td>15</td>
-          <td>Тихонова Ирина Юрьевна, заведующий ЛХО, врач-стоматолог</td>
-          <td>Высшее, Волгоградский государственный медицинский университет, 2009, врач-стоматолог, высшая категория</td>
-          <td>Стоматология общей практики, до 28.01.2030, № 7725 032570588; Организация здравоохранения, до 29.10.2029, № 7724 032322733</td>
-          <td>ООО «Непрерывное Профессиональное Образование», Москва, 25.09.2023; 07.08.2023</td>
-        </tr>
-        <tr>
-          <td>16</td>
-          <td>Мясоедова Галина Валентиновна, зубной врач</td>
-          <td>Среднее профессиональное, Шахтинское медицинское училище им. Г.В. Кузнецовой, г. Шахты, 1995, зубной врач, высшая категория</td>
-          <td>Стоматология, до 14.06.2027, №2022.370268</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 29.06.2022</td>
-        </tr>
-        <tr>
-          <td>17</td>
-          <td>Нагиева Татьяна Александровна, зубной врач</td>
-          <td>Среднее профессиональное, Таганрогское медицинское училище, Таганрог, 1993, зубной врач, высшая категория</td>
-          <td>Стоматология, до 23.07.2029, № 7724 032122657</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 19.06.2024</td>
-        </tr>
-        <tr>
-          <td>18</td>
-          <td>Нестеренко Юлия Алексеевна, врач-стоматолог-хирург</td>
-          <td>Высшее, Волгоградский государственный медицинский университет, 2009, врач-стоматолог, высшая категория</td>
-          <td>Стоматология хирургическая, до 17.11.2025, №1126040008843</td>
-          <td>НОДПО «Институт повышения квалификации «ЮТАМЕДФАРМ», Ставрополь, 17.11.2020</td>
-        </tr>
-        <tr>
-          <td>19</td>
-          <td>Писаревский Александр Евгеньевич, врач-стоматолог-терапевт</td>
-          <td>Высшее, Воронежский государственный университет, Воронеж, 1991, врач-стоматолог</td>
-          <td>Ортодонтия, до 30.01.2029, № 7724 031667157</td>
-          <td>Современные аспекты ортодонтии, НОДПО «Институт повышения квалификации «ЮТАМЕДФАРМ», Ставрополь, 05.02.2019</td>
-        </tr>
-        <tr>
-          <td>20</td>
-          <td>Трофимова Елена Юрьевна, зубной врач</td>
-          <td>Среднее профессиональное, Таганрогское медицинское училище, Таганрог, 1992, зубной врач, высшая категория</td>
-          <td>Стоматология, до 18.12.2025, № 0761310573564</td>
-          <td>ГБОУДПО «Центр повышения квалификации специалистов со средним медицинским образованием», 18.12.2020</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-</div>
-
-<!-- ===== VACANCIES PAGE ===== -->
-<div id="page-vacancies" class="page">
-  <main>
-    <h2 class="section-title">Вакансии</h2>
-    <div class="notice">
-      По вопросам трудоустройства обращайтесь по телефону приёмной: <a href="tel:+78636157020"><strong>(86361) 5-70-20</strong></a>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Должность</th>
-          <th>З/п (руб.)</th>
-          <th>Режим работы</th>
-          <th>Требования</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Медицинская сестра</td>
-          <td>33 864</td>
-          <td>Сменный</td>
-          <td>Специальность — сестринское дело. Аккуратность, чистоплотность, трудолюбие. Умение пользоваться компьютером (приветствуется). Приветствуется опыт работы в стоматологической поликлинике.</td>
-        </tr>
-        <tr>
-          <td>Врач-стоматолог</td>
-          <td>58 697</td>
-          <td>Сменный</td>
-          <td>Высшее медицинское образование (сертификат или аккредитация «Стоматология»). Умение пользоваться компьютером. Доброжелательность, отзывчивость, коммуникабельность. Приветствуется опыт работы в стоматологической поликлинике.</td>
-        </tr>
-        <tr>
-          <td>Врач-стоматолог-терапевт</td>
-          <td>58 697</td>
-          <td>Сменный</td>
-          <td>Высшее медицинское образование (сертификат или аккредитация «Стоматология»). Умение пользоваться компьютером. Доброжелательность, отзывчивость, коммуникабельность. Приветствуется опыт работы в стоматологической поликлинике.</td>
-        </tr>
-        <tr>
-          <td>Врач-стоматолог детский</td>
-          <td>58 697</td>
-          <td>Сменный</td>
-          <td>Высшее медицинское образование (сертификат или аккредитация «Стоматология»). Умение пользоваться компьютером. Доброжелательность, отзывчивость, коммуникабельность. Приветствуется опыт работы в стоматологической поликлинике.</td>
-        </tr>
-        <tr>
-          <td>Врач-стоматолог-ортопед</td>
-          <td>58 697</td>
-          <td>Сменный</td>
-          <td>Высшее медицинское образование (сертификат или аккредитация «Стоматология»). Умение пользоваться компьютером. Доброжелательность, отзывчивость, коммуникабельность. Приветствуется опыт работы в стоматологической поликлинике.</td>
-        </tr>
-        <tr>
-          <td>Врач-ортодонт</td>
-          <td>58 697</td>
-          <td>Сменный</td>
-          <td>Высшее медицинское образование (сертификат или аккредитация «Стоматология»). Умение пользоваться компьютером. Доброжелательность, отзывчивость, коммуникабельность. Приветствуется опыт работы в стоматологической поликлинике.</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>ГАУ РО «СП» в г. Гуково</h4>
-        <p>Единственная государственная стоматологическая поликлиника города с 1974 года</p>
-        <p>347881, Ростовская область,<br>г. Гуково, ул. Карла Маркса, 51</p>
-      </div>
-      <div class="footer-col">
-        <h4>Телефоны</h4>
-        <a href="tel:+78636157020">Приёмная: (86361) 5-70-20</a>
-        <a href="tel:+78636156099">Регистратура: (86361) 5-60-99</a>
-        <a href="tel:+78636156133">Бухгалтерия: (86361) 5-61-33</a>
-        <a href="tel:+78636156783">Ортопедия: (86361) 5-67-83</a>
-      </div>
-      <div class="footer-col">
-        <h4>Запись на приём</h4>
-        <a href="https://www.gosuslugi.ru/" target="_blank">Госуслуги</a>
-        <a href="http://xn--80adfbej0ceadr0m.xn--p1ai/" target="_blank">Здоровье Дона</a>
-        <a href="https://max.ru/zdrav_rnd_bot" target="_blank">Чат-бот МАХ @zdrav_rnd_bot</a>
-        <a href="tel:+78636156099">Регистратура: (86361) 5-60-99</a>
-      </div>
-      <div class="footer-col">
-        <h4>Полезные ссылки</h4>
-        <a href="https://www.gosuslugi.ru/" target="_blank">Госуслуги</a>
-        <a href="https://pos.gosuslugi.ru/" target="_blank">Решаем вместе</a>
-        <a href="https://nok.minzdrav.gov.ru/" target="_blank">Оценка качества</a>
-        <a href="https://t.me/cyberpolice_rus" target="_blank">Киберполиция России</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2026 ГАУ РО «Стоматологическая поликлиника» в г. Гуково &nbsp;|&nbsp; gukovostom.ru
-    </div>
-  </div>
-</footer>
-
-<script>
-function toggleAccessibility() {
-  document.body.classList.toggle('accessible');
-  localStorage.setItem('accessible', document.body.classList.contains('accessible'));
-}
-// Restore accessibility mode on load
-if (localStorage.getItem('accessible') === 'true') {
-  document.body.classList.add('accessible');
-}
-
-function showTariff(name) {
-  document.getElementById('tariff-paid').style.display = name === 'paid' ? 'block' : 'none';
-  document.getElementById('tariff-льготные').style.display = name === 'льготные' ? 'block' : 'none';
-}
-
-function showPage(name, el) {
-  // Hide all pages
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  // Show selected
-  document.getElementById('page-' + name).classList.add('active');
-  // Update nav
-  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-  if (el) el.classList.add('active');
-  // Close mobile menu
-  document.getElementById('navLinks').classList.remove('open');
-  // Scroll to top
-  window.scrollTo(0, 0);
-  return false;
-}
-
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
-}
-</script>
-
-</body>
-</html>
+      <li><span class="link-dot"></span><a href="https://minzdrav.donlan
