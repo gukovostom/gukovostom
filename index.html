@@ -600,8 +600,26 @@
       <a href="#anticorr" onclick="showPage('anticorr',this)">Противодействие коррупции</a>
       <a href="#contacts" onclick="showPage('contacts',this)">Контакты</a>
     </div>
+    <button onclick="toggleSearch()" aria-label="Поиск" title="Поиск по сайту"
+      style="background:none;border:none;cursor:pointer;color:white;padding:13px 16px;font-size:18px;display:flex;align-items:center;opacity:0.9;transition:opacity 0.2s;margin-left:auto;"
+      onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
   </div>
 </nav>
+
+<!-- ПОИСКОВАЯ СТРОКА -->
+<div id="search-bar" style="display:none;background:#1a4a7a;border-top:1px solid rgba(255,255,255,0.2);padding:12px 20px;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="search-input" type="text" placeholder="Введите запрос — например: расписание, врач, тариф..."
+      oninput="doSearch(this.value)"
+      onkeydown="if(event.key==='Escape')toggleSearch()"
+      style="flex:1;background:transparent;border:none;outline:none;color:white;font-size:15px;font-family:'PT Sans',sans-serif;">
+    <button onclick="toggleSearch()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.7);font-size:20px;padding:0 4px;">✕</button>
+  </div>
+  <div id="search-results" style="max-width:1100px;margin:10px auto 0;display:none;"></div>
+</div>
 
 <!-- HOURS BANNER -->
 <div class="hours-banner">
@@ -1343,8 +1361,8 @@
       <li><span class="link-dot"></span><a href="docs/prikaz_388n.pdf" target="_blank">Приказ № 388н — Порядок оказания скорой медицинской помощи</a></li>
       <li><span class="link-dot"></span><a href="docs/fz_potrebiteli.pdf" target="_blank">Закон РФ № 2300-I «О защите прав потребителей»</a></li>
       <li><span class="link-dot"></span><a href="docs/fz_narkotiki.pdf" target="_blank">ФЗ № 3-ФЗ «О наркотических средствах и психотропных веществах»</a></li>
-      <li><span class="link-dot"></span><a href="docs/postanovlenie_oms_2025.pdf" target="_blank">Постановление № 23 от 22.01.2025 — Территориальная программа ОМС Ростовской области на 2025 год</a></li>
-      <li><span class="link-dot"></span><a href="docs/postanovlenie_339_2026.pdf" target="_blank">Постановление № 339 от 29.12.2025 — Территориальная программа ОМС Ростовской области на 2026 год</a></li>
+      <li><span class="link-dot"></span><a href="docs/postanovlenie_oms_2025.pdf" target="_blank">Постановление № 23 от 22.01.2025 — Территориальная программа ОМС Ростовской области</a></li>
+      <li><span class="link-dot"></span><a href="docs/postanovlenie_339_2026.pdf" target="_blank">Постановление № 339 от 29.12.2025 — Об оказании медицинской помощи на 2026 год</a></li>
       <li><span class="link-dot"></span><a href="docs/zhvlp.pdf" target="_blank">Распоряжение Правительства РФ № 2406-р — Перечень ЖНВЛП</a></li>
     </ul>
 
@@ -1856,6 +1874,104 @@
 </footer>
 
 <script>
+// ====== ПОИСК ПО САЙТУ ======
+const SEARCH_INDEX = [
+  { page: 'home',     title: 'Главная',                      keywords: 'главная поликлиника гуково стоматология омс льготное протезирование запись приём 1974 государственная' },
+  { page: 'schedule', title: 'Расписание и услуги',           keywords: 'расписание услуги врачи терапевт хирург ортопед детский пародонтолог время приём запись' },
+  { page: 'doctors',  title: 'Сведения о врачах',             keywords: 'врачи доктор специалист образование сертификат стаж квалификация тихонова' },
+  { page: 'vacancies',title: 'Вакансии',                      keywords: 'вакансии работа врач медсестра санитарка должность трудоустройство целевое обучение' },
+  { page: 'tariffs',  title: 'Тарифы на платные услуги',      keywords: 'тарифы цены стоимость платные услуги льготные прейскурант' },
+  { page: 'patients', title: 'Информация для пациентов',      keywords: 'пациентам права обязанности омс полис страховая панацея согаз капитал альфа макс страхование' },
+  { page: 'docs',     title: 'Документы',                     keywords: 'документы лицензия устав отчёт зарплата приказ нок независимая оценка качества огрн инн' },
+  { page: 'anticorr', title: 'Противодействие коррупции',     keywords: 'коррупция антикоррупция обращение жалоба закон приказ отчёт план телефон доверия' },
+  { page: 'contacts', title: 'Контакты',                      keywords: 'контакты адрес телефон почта карта как проехать 86361 карла маркса 51 гуково' },
+];
+
+function toggleSearch() {
+  const bar = document.getElementById('search-bar');
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  if (bar.style.display === 'none') {
+    bar.style.display = 'block';
+    input.value = '';
+    results.style.display = 'none';
+    results.innerHTML = '';
+    setTimeout(() => input.focus(), 50);
+  } else {
+    bar.style.display = 'none';
+  }
+}
+
+function doSearch(query) {
+  const results = document.getElementById('search-results');
+  const q = query.trim().toLowerCase();
+  if (q.length < 2) { results.style.display = 'none'; results.innerHTML = ''; return; }
+
+  const pageMatches = SEARCH_INDEX.filter(item =>
+    item.title.toLowerCase().includes(q) || item.keywords.toLowerCase().includes(q)
+  );
+
+  const textMatches = [];
+  document.querySelectorAll('.page').forEach(page => {
+    const pageId = page.id.replace('page-', '');
+    const pageInfo = SEARCH_INDEX.find(p => p.page === pageId);
+    if (!pageInfo) return;
+    const walker = document.createTreeWalker(page, NodeFilter.SHOW_TEXT);
+    const found = [];
+    let node;
+    while (node = walker.nextNode()) {
+      const text = node.textContent.trim();
+      if (text.toLowerCase().includes(q) && text.length > 10) {
+        const idx = text.toLowerCase().indexOf(q);
+        const start = Math.max(0, idx - 40);
+        const end = Math.min(text.length, idx + q.length + 60);
+        let snippet = (start > 0 ? '…' : '') + text.slice(start, end) + (end < text.length ? '…' : '');
+        const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+        snippet = snippet.replace(re, '<mark style="background:#fff176;color:#1a4a7a;border-radius:2px;padding:0 2px;">$1</mark>');
+        found.push(snippet);
+        if (found.length >= 2) break;
+      }
+    }
+    if (found.length > 0 && !pageMatches.find(p => p.page === pageId)) {
+      textMatches.push({ page: pageId, title: pageInfo.title, snippets: found });
+    }
+  });
+
+  if (pageMatches.length === 0 && textMatches.length === 0) {
+    results.style.display = 'block';
+    results.innerHTML = '<p style="color:rgba(255,255,255,0.7);font-size:14px;padding:8px 0;">Ничего не найдено. Попробуйте другой запрос.</p>';
+    return;
+  }
+
+  let html = '<div style="display:flex;flex-wrap:wrap;gap:8px;">';
+  pageMatches.forEach(item => {
+    html += `<a href="#${item.page}" onclick="showPage('${item.page}',null);toggleSearch();"
+      style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:white;
+      padding:8px 16px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;
+      border:1px solid rgba(255,255,255,0.25);"
+      onmouseover="this.style.background='rgba(255,255,255,0.25)'"
+      onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      ${item.title}</a>`;
+  });
+  html += '</div>';
+  if (textMatches.length > 0) {
+    html += '<div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;">';
+    textMatches.forEach(item => {
+      item.snippets.forEach(snippet => {
+        html += `<div style="background:rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;cursor:pointer;"
+          onclick="showPage('${item.page}',null);toggleSearch();">
+          <span style="font-size:12px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px;">${item.title}</span><br>
+          <span style="font-size:13px;color:rgba(255,255,255,0.9);">${snippet}</span>
+        </div>`;
+      });
+    });
+    html += '</div>';
+  }
+  results.style.display = 'block';
+  results.innerHTML = html;
+}
+
 // ====== ПУНКТ 1: Версия для слабовидящих ======
 function toggleAccessibility() {
   const isAccessible = document.body.classList.toggle('accessible');
